@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         system: {
             title: "SYSTEM CONTROL", code: "SYS-01 / CONTROL",
-            content: '<div class="wm-panel-heading">SYSTEM CONTROL</div><p class="wm-lead">PI220 system environment</p><p>System information, configuration tools and diagnostics will be developed here.</p><div class="wm-status-row"><span class="wm-status-dot"></span> WINDOW MANAGER CONNECTION ACTIVE</div>'
+            content: '<div class="pi220-system-control"><div class="pi220-system-home"><div class="wm-panel-heading">SYSTEM CONTROL</div><p class="wm-lead">APPLICATIONS & SYSTEM SERVICES</p><p class="pi220-system-intro">Independent applications integrated into the PI220 operative environment.</p><div class="pi220-app-grid"><button type="button" class="pi220-app-folder" data-launch-app="livecam"><span class="pi220-folder-icon">▣</span><span class="pi220-folder-name">PI220 LIVE CAM</span><span class="pi220-folder-meta">APP-001 · CAMERA SYSTEM</span><span class="pi220-folder-action">OPEN APPLICATION →</span></button></div><div class="wm-status-row"><span class="wm-status-dot"></span> SYSTEM CONTROL ACTIVE · 01 APPLICATION REGISTERED</div></div><div class="pi220-system-app-view" hidden><div class="pi220-app-toolbar"><button type="button" class="pi220-app-back">← SYSTEM CONTROL</button><span class="pi220-app-toolbar-title">PI220 LIVE CAM · APP-001</span><a href="https://profdrjamesjessen-cyber.github.io/PI220-LIVE-CAM/" target="_blank" rel="noopener noreferrer">OPEN EXTERNALLY ↗</a></div><iframe class="pi220-livecam-frame" title="PI220 LIVE CAM" src="about:blank" allow="camera; fullscreen" allowfullscreen loading="lazy"></iframe></div></div>'
         }
     };
 
@@ -97,6 +97,41 @@ function addTaskButton(id, title) {
     return button;
 }
 
+    function mountSystemControl(host) {
+        if (!host) return;
+        var home = host.querySelector(".pi220-system-home");
+        var view = host.querySelector(".pi220-system-app-view");
+        var frame = host.querySelector(".pi220-livecam-frame");
+        var launch = host.querySelector('[data-launch-app="livecam"]');
+        var back = host.querySelector(".pi220-app-back");
+        var liveCamUrl = "https://profdrjamesjessen-cyber.github.io/PI220-LIVE-CAM/";
+
+        launch.addEventListener("click", function () {
+            home.hidden = true;
+            view.hidden = false;
+            if (frame.getAttribute("src") !== liveCamUrl) {
+                frame.setAttribute("src", liveCamUrl);
+            }
+            logSystem("[SYS] PI220 LIVE CAM APPLICATION REQUESTED");
+        });
+
+        back.addEventListener("click", function () {
+            view.hidden = true;
+            home.hidden = false;
+            logSystem("[SYS] RETURNED TO SYSTEM CONTROL");
+        });
+    }
+
+    function logSystem(message) {
+        var terminal = document.getElementById("terminalOutput");
+        if (terminal) {
+            var line = document.createElement("div");
+            line.textContent = message;
+            terminal.appendChild(line);
+            terminal.scrollTop = terminal.scrollHeight;
+        }
+    }
+
     function openApp(id) {
         var app = apps[id];
         if (!app) return;
@@ -139,6 +174,9 @@ function addTaskButton(id, title) {
         }
         if (id === "help" && window.PI220HelpRenderer) {
             window.PI220HelpRenderer.mount(win.querySelector("#pi220HelpHost"));
+        }
+        if (id === "system") {
+            mountSystemControl(win.querySelector(".pi220-system-control"));
         }
 
         var entry = {
