@@ -1,0 +1,26 @@
+/* PI220 MEDIA EXPLORER — CINEMATIC SINGLE IMAGE */
+.pi-window[data-app="media"] .pi-window-content { display: flex; flex: 1 1 auto; min-height: 0; padding: 0; overflow: hidden; background: #050a11; }
+.pi220-media-host { display: flex; flex: 1 1 auto; width: 100%; height: 100%; min-width: 0; min-height: 0; overflow: hidden; }
+.pi220-carousel { flex: 1 1 auto; width: 100%; height: 100%; min-width: 0; min-height: 0; display: flex; flex-direction: column; background: #050a11; }
+.pi220-carousel-stage { position: relative; flex: 1; min-height: 0; overflow: hidden; display: flex; align-items: center; justify-content: center; background: radial-gradient(ellipse at center, #142638 0%, #080f19 58%, #03070d 100%); }
+.pi220-carousel-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; opacity: 0; transition: opacity .65s ease; z-index: 1; }
+.pi220-carousel-image.is-visible { opacity: 1; }
+.pi220-carousel-shade { position: absolute; inset: 0; pointer-events: none; z-index: 2; background: linear-gradient(180deg, rgba(3,8,14,.10), transparent 22%, transparent 75%, rgba(3,8,14,.28)); }
+.pi220-carousel-empty { position: relative; z-index: 3; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 13px; padding: 30px; text-align: center; color: #a9bdcc; }
+.pi220-carousel-kicker { color: #b99a61; font-size: 9px; font-weight: 700; letter-spacing: 2.2px; }
+.pi220-carousel-empty strong { color: #eaf5fc; font-size: clamp(20px, 3vw, 34px); letter-spacing: 3px; font-weight: 500; }
+.pi220-carousel-empty > span:not(.pi220-carousel-kicker) { color: #78d69a; font-size: 9px; letter-spacing: 2px; }
+.pi220-carousel-empty small { max-width: 430px; color: #71899b; font-size: 11px; line-height: 1.6; }
+.pi220-carousel-arrow { position: absolute; z-index: 4; top: 50%; transform: translateY(-50%); width: 42px; height: 58px; border: 1px solid rgba(131,213,245,.25); background: rgba(5,14,24,.62); color: #d9effb; font-size: 34px; line-height: 1; cursor: pointer; transition: background .2s, border-color .2s; }
+.pi220-carousel-arrow:hover { background: rgba(45,126,166,.48); border-color: #55bce8; }
+.pi220-carousel-arrow:disabled { opacity: .25; cursor: default; }
+.pi220-carousel-arrow.previous { left: 15px; }
+.pi220-carousel-arrow.next { right: 15px; }
+.pi220-carousel-counter { position: absolute; z-index: 4; right: 18px; bottom: 16px; color: #d4e6f0; font-size: 10px; letter-spacing: 1.5px; text-shadow: 0 1px 5px #000; }
+.pi220-carousel-toolbar { min-height: 43px; flex: 0 0 43px; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 0 16px; border-top: 1px solid rgba(85,188,232,.16); background: #080e18; }
+.pi220-carousel-caption { display: flex; align-items: center; gap: 9px; min-width: 0; color: #7893a7; font-size: 9px; letter-spacing: 1.1px; }
+.pi220-carousel-live { width: 6px; height: 6px; flex: 0 0 6px; border-radius: 50%; background: #78d69a; box-shadow: 0 0 8px rgba(120,214,154,.45); }
+.pi220-carousel-actions button { border: 1px solid rgba(85,188,232,.25); padding: 6px 10px; background: transparent; color: #9ecce3; font: inherit; font-size: 9px; letter-spacing: 1px; cursor: pointer; }
+.pi220-carousel-actions button:hover { border-color: #55bce8; color: #eaf8ff; }
+.pi220-carousel-actions button:disabled { opacity: .35; cursor: default; }
+@media (max-width: 600px) { .pi220-carousel-arrow { width: 34px; height: 48px; } .pi220-carousel-arrow.previous { left: 7px; } .pi220-carousel-arrow.next { right: 7px; } .pi220-carousel-toolbar { padding: 0 9px; } .pi220-carousel-caption { font-size: 8px; letter-spacing: .5px; } }

@@ -1,0 +1,1171 @@
+/* =====================================================
+   PI220 — CORPORATE TACTICAL
+   VISUAL FOUNDATION REVISION 003
+   PARALLEL INDUSTRIES 220
+   ===================================================== */
+
+
+/* 01 — DESIGN TOKENS */
+
+:root {
+    --taskbar-width: 62px;
+    --terminal-height: 190px;
+
+    --color-background: #080e18;
+    --color-background-deep: #060b12;
+    --color-taskbar-top: #142437;
+    --color-taskbar-bottom: #0b1421;
+    --color-panel: #101d2b;
+    --color-panel-raised: #17283a;
+    --color-terminal: #070d12;
+
+    --color-text: #e1eaf1;
+    --color-muted: #8296a8;
+    --color-subtle: #52677a;
+
+    --color-accent: #55bce8;
+    --color-accent-bright: #83d5f5;
+    --color-accent-soft: rgba(85, 188, 232, 0.13);
+
+    --color-gold: #b99a61;
+    --color-gold-soft: rgba(185, 154, 97, 0.14);
+
+    --color-terminal-green: #78d69a;
+    --color-border: #263b50;
+    --color-border-bright: #36536c;
+
+    --shadow-deep: 0 18px 48px rgba(0, 0, 0, 0.42);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--color-background);
+    color: var(--color-text);
+    -webkit-font-smoothing: antialiased;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+/* 02 — MAIN SYSTEM SHELL */
+
+.system-shell {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+    background: var(--color-background);
+}
+
+
+/* 03 — LEFT VERTICAL TASKBAR */
+
+.system-taskbar {
+    position: relative;
+    width: var(--taskbar-width);
+    min-width: var(--taskbar-width);
+    flex: 0 0 var(--taskbar-width);
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 11px 0 0;
+    gap: 22px;
+
+    background:
+        linear-gradient(180deg, rgba(36, 65, 88, 0.22), transparent 35%),
+        linear-gradient(180deg, var(--color-taskbar-top), var(--color-taskbar-bottom));
+
+    border-right: 1px solid #29445b;
+    box-shadow: 5px 0 24px rgba(0, 0, 0, 0.16);
+    z-index: 20;
+}
+
+
+/* 04 — START BUTTON */
+
+.start-button {
+    position: relative;
+    width: 43px;
+    height: 43px;
+    flex: 0 0 43px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 9px;
+    border: 1px solid rgba(131, 213, 245, 0.48);
+
+    background: linear-gradient(145deg, #28516d, #142d43);
+    color: #e8f7ff;
+
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.12),
+        0 4px 12px rgba(0, 0, 0, 0.22);
+
+    cursor: pointer;
+    transition: background 150ms ease, border-color 150ms ease, transform 150ms ease;
+}
+
+.start-button::after {
+    content: "";
+    position: absolute;
+    left: -10px;
+    top: 9px;
+    bottom: 9px;
+    width: 2px;
+    background: var(--color-accent);
+    opacity: 0.9;
+}
+
+.start-button:hover {
+    background: linear-gradient(145deg, #347093, #1a3c57);
+    border-color: var(--color-accent-bright);
+}
+
+.start-button:active {
+    transform: scale(0.96);
+}
+
+
+/* 05 — APPLICATION SHORTCUTS */
+
+.taskbar-apps {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 11px;
+}
+
+.taskbar-apps button {
+    position: relative;
+    width: 40px;
+    height: 40px;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid transparent;
+    border-radius: 8px;
+
+    background: transparent;
+    color: #a9bfd0;
+
+    font-size: 19px;
+    cursor: pointer;
+
+    transition: color 150ms ease, background 150ms ease, border-color 150ms ease;
+}
+
+.taskbar-apps button:hover {
+    color: #e9f7ff;
+    background: rgba(85, 188, 232, 0.12);
+    border-color: rgba(85, 188, 232, 0.32);
+}
+
+.taskbar-apps button:focus-visible,
+.start-button:focus-visible,
+.taskbar-controls button:focus-visible {
+    outline: 1px solid var(--color-accent-bright);
+    outline-offset: 2px;
+}
+
+
+/* 06 — LANGUAGE AND SOUND CONTROLS */
+
+.taskbar-controls {
+    position: absolute;
+    left: 0;
+    bottom: 76px;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.language-control {
+    width: 42px;
+    padding: 7px 0;
+
+    display: flex;
+    justify-content: center;
+
+    border-top: 1px solid rgba(130, 150, 168, 0.25);
+    border-bottom: 1px solid rgba(130, 150, 168, 0.25);
+}
+
+.language-control button {
+    padding: 2px 4px;
+    border: 0;
+    background: transparent;
+
+    color: #c5d5e2;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+
+    cursor: pointer;
+}
+
+.language-control button:hover {
+    color: var(--color-accent-bright);
+}
+
+.taskbar-controls .sound-toggle {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 8px;
+
+    color: #a9bfd0;
+    cursor: pointer;
+    transition: color 150ms ease, background 150ms ease, border-color 150ms ease;
+}
+
+.taskbar-controls .sound-toggle:hover {
+    color: #e9f7ff;
+    background: rgba(85, 188, 232, 0.12);
+    border-color: rgba(85, 188, 232, 0.32);
+}
+
+.sound-icon {
+    display: block;
+    color: currentColor;
+}
+
+.sound-muted {
+    display: none;
+}
+
+.sound-icon.is-muted .sound-waves {
+    display: none;
+}
+
+.sound-icon.is-muted .sound-muted {
+    display: block;
+}
+
+
+/* 07 — TASKBAR CLOCK AND DATE */
+
+.taskbar-bottom {
+    position: absolute;
+    left: 0;
+    bottom: 12px;
+    width: var(--taskbar-width);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+    text-align: center;
+}
+
+.system-clock {
+    display: block;
+    width: 100%;
+    color: #e4edf4;
+    font-size: 13px;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    text-align: center;
+}
+
+.system-date {
+    display: block;
+    width: 100%;
+    color: #8299ab;
+    font-size: 9px;
+    font-variant-numeric: tabular-nums;
+    text-align: center;
+}
+
+
+/* 08 — START MENU */
+
+.start-menu {
+    position: fixed;
+    z-index: 30;
+    top: 10px;
+    left: calc(var(--taskbar-width) + 10px);
+
+    width: 260px;
+    padding: 11px;
+
+    background:
+        linear-gradient(145deg, rgba(31, 53, 72, 0.98), rgba(12, 23, 36, 0.99));
+    border: 1px solid #3b5b74;
+    border-radius: 9px;
+
+    box-shadow: var(--shadow-deep);
+    backdrop-filter: blur(12px);
+}
+
+.start-menu-heading {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    padding: 12px 10px 14px;
+    margin-bottom: 7px;
+
+    border-bottom: 1px solid rgba(130, 150, 168, 0.2);
+}
+
+.menu-kicker {
+    color: var(--color-gold);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+}
+
+.start-menu-heading strong {
+    color: #e1edf5;
+    font-size: 12px;
+    letter-spacing: 0.8px;
+}
+
+.start-menu button {
+    display: block;
+    width: 100%;
+    padding: 12px 11px;
+
+    text-align: left;
+    color: #c6d6e2;
+
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 5px;
+
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+
+    cursor: pointer;
+    transition: color 140ms ease, background 140ms ease, border-color 140ms ease;
+}
+
+.start-menu button:hover {
+    color: #f0f9ff;
+    background: rgba(85, 188, 232, 0.11);
+    border-color: rgba(85, 188, 232, 0.2);
+}
+
+.start-menu-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 11px 10px 4px;
+    margin-top: 6px;
+
+    border-top: 1px solid rgba(130, 150, 168, 0.18);
+    color: #71889a;
+
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1.1px;
+}
+
+.start-menu-footer span {
+    color: var(--color-gold);
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* 09 — MAIN DESKTOP AREA */
+
+.system-main {
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.desktop-workspace {
+    position: relative;
+    isolation: isolate;
+
+    flex: 1;
+    min-width: 0;
+    min-height: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(ellipse at 53% 42%, rgba(35, 78, 105, 0.42) 0%, transparent 43%),
+        radial-gradient(ellipse at 85% 100%, rgba(31, 55, 78, 0.28) 0%, transparent 42%),
+        linear-gradient(135deg, #142638 0%, #0c1826 48%, #080f19 100%);
+}
+
+/* Fine technical grid: intentionally subtle. */
+.desktop-grid {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.19;
+
+    background-image:
+        linear-gradient(rgba(112, 157, 185, 0.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(112, 157, 185, 0.12) 1px, transparent 1px);
+    background-size: 48px 48px;
+
+    mask-image: linear-gradient(to bottom, black, transparent 88%);
+}
+
+.desktop-orbit {
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+    border: 1px solid rgba(103, 170, 204, 0.10);
+    border-radius: 50%;
+    transform: rotate(-18deg);
+}
+
+.desktop-orbit-one {
+    width: min(72vw, 760px);
+    height: min(28vw, 290px);
+}
+
+.desktop-orbit-two {
+    width: min(88vw, 940px);
+    height: min(39vw, 400px);
+    border-color: rgba(185, 154, 97, 0.08);
+    transform: rotate(21deg);
+}
+
+.desktop-intro {
+    max-width: 100%;
+    padding: 24px;
+    text-align: center;
+    pointer-events: none;
+}
+
+.desktop-overline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    color: #8faabd;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2.2px;
+}
+
+.status-indicator {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-terminal-green);
+    box-shadow: 0 0 9px rgba(120, 214, 154, 0.55);
+}
+
+.desktop-title {
+    margin-top: 23px;
+
+    color: #e4edf4;
+    font-size: clamp(22px, 3vw, 38px);
+    font-weight: 300;
+    letter-spacing: clamp(2px, 0.55vw, 6px);
+    line-height: 1.25;
+}
+
+.desktop-title span {
+    color: var(--color-accent-bright);
+    font-weight: 500;
+}
+
+.desktop-subtitle {
+    margin-top: 13px;
+
+    color: #9cb2c2;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 5px;
+}
+
+.desktop-divider {
+    width: 150px;
+    height: 1px;
+    margin: 27px auto 0;
+    background: linear-gradient(90deg, transparent, rgba(85, 188, 232, 0.7), transparent);
+}
+
+.desktop-divider span {
+    display: block;
+    width: 25px;
+    height: 1px;
+    margin: auto;
+    background: var(--color-gold);
+}
+
+.build-label {
+    margin-top: 23px;
+    color: #71899b;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+}
+
+.build-label span {
+    padding: 0 5px;
+    color: var(--color-gold);
+}
+
+.desktop-corner {
+    position: absolute;
+    color: #607b90;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    pointer-events: none;
+}
+
+.desktop-corner span {
+    color: var(--color-gold);
+}
+
+.desktop-corner-top {
+    top: 22px;
+    right: 24px;
+}
+
+.desktop-corner-bottom {
+    right: 24px;
+    bottom: 18px;
+}
+
+.desktop-corner-bottom span {
+    color: var(--color-terminal-green);
+}
+
+
+/* 10 — SYSTEM TERMINAL */
+
+.system-terminal {
+    position: relative;
+
+    height: var(--terminal-height);
+    flex: 0 0 var(--terminal-height);
+
+    min-height: 100px;
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    background: var(--color-terminal);
+    border-top: 1px solid #29465a;
+    box-shadow: 0 -8px 28px rgba(0, 0, 0, 0.24);
+}
+
+
+/* 11 — TERMINAL RESIZE HANDLE */
+
+.terminal-resize-handle {
+    position: absolute;
+    top: -5px;
+    left: 0;
+    right: 0;
+
+    height: 10px;
+    cursor: ns-resize;
+    touch-action: none;
+    z-index: 5;
+}
+
+.terminal-resize-handle::after {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: calc(50% - 23px);
+    width: 46px;
+    height: 2px;
+    border-radius: 2px;
+    background: rgba(104, 161, 190, 0.55);
+    opacity: 0;
+    transition: opacity 140ms ease;
+}
+
+.terminal-resize-handle:hover::after,
+.terminal-resize-handle:focus-visible::after {
+    opacity: 1;
+}
+
+.terminal-resize-handle:focus-visible {
+    outline: 1px solid var(--color-accent);
+    outline-offset: -2px;
+}
+
+
+/* 12 — TERMINAL HEADER */
+
+.terminal-header {
+    height: 36px;
+    min-height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 15px;
+
+    background: linear-gradient(90deg, #142536, #101c29);
+    border-bottom: 1px solid #203648;
+
+    color: #c5d5e1;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.1px;
+}
+
+.terminal-heading {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    min-width: 0;
+}
+
+.terminal-heading-mark {
+    color: var(--color-terminal-green);
+    font-family: Consolas, monospace;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.terminal-header-divider {
+    color: #536a7b;
+}
+
+.terminal-header-subtitle {
+    color: #71899b;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 1.3px;
+}
+
+.terminal-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: var(--color-terminal-green);
+    font-size: 9px;
+    letter-spacing: 1.5px;
+}
+
+.terminal-status i {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--color-terminal-green);
+    box-shadow: 0 0 8px rgba(120, 214, 154, 0.55);
+}
+
+
+/* 13 — TERMINAL OUTPUT */
+
+.terminal-output {
+    flex: 1;
+    min-height: 0;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    padding: 10px 15px;
+
+    color: var(--color-terminal-green);
+
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 12px;
+    line-height: 1.65;
+    letter-spacing: 0.15px;
+
+    overflow-wrap: anywhere;
+    scrollbar-color: #294b3a #0a1115;
+    scrollbar-width: thin;
+}
+
+.terminal-output::-webkit-scrollbar {
+    width: 7px;
+}
+
+.terminal-output::-webkit-scrollbar-track {
+    background: #0a1115;
+}
+
+.terminal-output::-webkit-scrollbar-thumb {
+    background: #294b3a;
+    border-radius: 4px;
+}
+
+
+/* 14 — TERMINAL COMMAND INPUT */
+
+.terminal-input {
+    height: 41px;
+    min-height: 41px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 0 13px;
+
+    border-top: 1px solid #1e342b;
+    background: #0b1417;
+}
+
+.command-prefix {
+    color: var(--color-terminal-green);
+    font-family: Consolas, monospace;
+    font-weight: 700;
+}
+
+.terminal-input input {
+    flex: 1;
+    min-width: 0;
+
+    color: #cce8d5;
+    background: transparent;
+
+    border: 0;
+    outline: none;
+
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 12px;
+}
+
+.terminal-input input::placeholder {
+    color: #60796b;
+    opacity: 1;
+}
+
+.terminal-input button {
+    color: #a8e4b9;
+    background: #142b21;
+    border: 1px solid #365d43;
+
+    padding: 7px 11px;
+
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+    transition: background 140ms ease, border-color 140ms ease;
+}
+
+.terminal-input button span {
+    padding-left: 4px;
+    color: var(--color-gold);
+}
+
+.terminal-input button:hover {
+    background: #1d3a2a;
+    border-color: #5b9168;
+}
+
+
+/* 15 — RESPONSIVE FOUNDATION */
+
+@media (max-width: 700px) {
+
+    :root {
+        --taskbar-width: 52px;
+    }
+
+    .system-taskbar {
+        gap: 18px;
+    }
+
+    .start-button {
+        width: 39px;
+        height: 39px;
+        flex-basis: 39px;
+    }
+
+    .taskbar-apps {
+        gap: 8px;
+    }
+
+    .taskbar-apps button {
+        width: 36px;
+        height: 36px;
+    }
+
+    .start-menu {
+        width: min(260px, calc(100vw - 65px));
+    }
+
+    .desktop-intro {
+        padding: 15px;
+    }
+
+    .desktop-overline {
+        font-size: 7px;
+        letter-spacing: 1.2px;
+    }
+
+    .desktop-title {
+        letter-spacing: 2px;
+    }
+
+    .desktop-subtitle {
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+
+    .build-label {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    .desktop-corner {
+        font-size: 7px;
+    }
+
+    .desktop-corner-top {
+        top: 13px;
+        right: 12px;
+    }
+
+    .desktop-corner-bottom {
+        right: 12px;
+        bottom: 12px;
+    }
+
+    .terminal-output {
+        padding: 8px 11px;
+        font-size: 11px;
+    }
+
+    .terminal-header {
+        padding: 0 11px;
+        font-size: 9px;
+    }
+
+    .terminal-header-subtitle {
+        font-size: 8px;
+    }
+
+    .terminal-input {
+        padding: 0 10px;
+    }
+
+    .terminal-input button {
+        padding: 7px 8px;
+    }
+}
+
+@media (max-width: 380px) {
+    .terminal-header-subtitle,
+    .terminal-header-divider {
+        display: none;
+    }
+
+    .desktop-overline {
+        max-width: 260px;
+        line-height: 1.6;
+    }
+
+    .desktop-title {
+        font-size: 21px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
+
+
+/* PI220 REVISION 006 — QUANTUM CONNECTION BOOT */
+.pi220-boot {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at 50% 43%, rgba(34, 91, 125, .30), transparent 36%),
+        linear-gradient(145deg, #102235 0%, #08131f 52%, #050a11 100%);
+    color: #e5f1f8;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity .55s ease, visibility .55s ease;
+}
+.pi220-boot.is-leaving { opacity: 0; visibility: hidden; pointer-events: none; }
+.pi220-boot-orbit {
+    position: absolute;
+    width: min(76vw, 680px);
+    height: min(34vw, 290px);
+    border: 1px solid rgba(85, 188, 232, .13);
+    border-radius: 50%;
+    transform: rotate(-24deg);
+    pointer-events: none;
+    animation: pi220Orbit 18s linear infinite;
+}
+.pi220-boot-orbit-two {
+    width: min(90vw, 850px);
+    height: min(48vw, 420px);
+    border-color: rgba(185, 154, 97, .10);
+    transform: rotate(27deg);
+    animation-direction: reverse;
+    animation-duration: 27s;
+}
+.pi220-boot-core {
+    position: relative;
+    width: 104px;
+    height: 104px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 28px;
+}
+.pi220-boot-mark {
+    position: relative;
+    z-index: 2;
+    color: #f0f7fc;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-shadow: 0 0 22px rgba(85,188,232,.35);
+}
+.pi220-boot-mark span { color: #b99a61; font-size: 12px; margin-left: 2px; }
+.pi220-boot-ring {
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(85,188,232,.32);
+    border-top-color: #83d5f5;
+    border-right-color: rgba(131,213,245,.08);
+    border-radius: 50%;
+    box-shadow: 0 0 28px rgba(85,188,232,.10), inset 0 0 22px rgba(85,188,232,.06);
+    animation: pi220Spin 2.8s linear infinite;
+}
+.pi220-boot-ring:before, .pi220-boot-ring:after {
+    content: "";
+    position: absolute;
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: #83d5f5;
+    box-shadow: 0 0 12px #55bce8;
+}
+.pi220-boot-ring:before { top: 12px; left: 19px; }
+.pi220-boot-ring:after { right: 8px; bottom: 27px; width: 3px; height: 3px; background: #b99a61; }
+.pi220-boot-brand {
+    color: #e5f1f8;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+.pi220-boot-brand span { color: #83d5f5; }
+.pi220-boot-phase {
+    min-height: 18px;
+    margin-top: 34px;
+    color: #9fdcf5;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.2px;
+    text-align: center;
+}
+.pi220-boot-track {
+    width: min(310px, 68vw);
+    height: 2px;
+    margin-top: 15px;
+    overflow: hidden;
+    background: rgba(131,213,245,.14);
+}
+.pi220-boot-progress {
+    width: 0;
+    height: 100%;
+    background: linear-gradient(90deg, #b99a61, #55bce8, #b8eaff);
+    box-shadow: 0 0 12px rgba(85,188,232,.7);
+    transition: width .65s cubic-bezier(.2,.7,.2,1);
+}
+.pi220-boot-detail {
+    min-height: 14px;
+    margin-top: 12px;
+    color: #6f8da3;
+    font-size: 8px;
+    letter-spacing: 1.7px;
+    text-align: center;
+}
+.pi220-boot-skip {
+    margin-top: 34px;
+    padding: 9px 13px;
+    border: 1px solid rgba(85,188,232,.28);
+    background: rgba(7,17,28,.32);
+    color: #a9c5d7;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+    cursor: pointer;
+    transition: color .2s, border-color .2s, background .2s;
+}
+.pi220-boot-skip:hover { color: #fff; border-color: #55bce8; background: rgba(85,188,232,.10); }
+.pi220-boot-skip span { color: #b99a61; margin-left: 7px; }
+.pi220-boot-foot {
+    position: absolute;
+    bottom: 24px;
+    color: #536f83;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1.7px;
+    text-align: center;
+}
+.pi220-boot-foot span { color: #b99a61; padding: 0 5px; }
+#pi220SystemShell { opacity: 0; transition: opacity .65s ease; }
+#pi220SystemShell.pi220-system-ready { opacity: 1; }
+@keyframes pi220Spin { to { transform: rotate(360deg); } }
+@keyframes pi220Orbit { to { transform: rotate(336deg); } }
+@media (prefers-reduced-motion: reduce) {
+    .pi220-boot-orbit, .pi220-boot-ring { animation: none !important; }
+    .pi220-boot, #pi220SystemShell, .pi220-boot-progress { transition-duration: .01ms !important; }
+}
+@media (max-width: 600px) {
+    .pi220-boot-brand { font-size: 9px; letter-spacing: 2px; }
+    .pi220-boot-phase { font-size: 9px; letter-spacing: 1.5px; }
+    .pi220-boot-foot { bottom: 15px; font-size: 7px; }
+}
+
+
+/* ================================================
+   PI220 REVISION 008 — PROJECTS REGISTRY
+   ================================================ */
+.pi220-projects-host { width:100%; height:100%; min-height:0; }
+.pi220-projects { color:var(--text-primary, #dce7f3); height:100%; overflow:auto; padding:clamp(14px, 2.2vw, 26px); box-sizing:border-box; }
+.pi220-projects-heading { border-bottom:1px solid rgba(94,166,210,.22); padding-bottom:16px; margin-bottom:16px; }
+.pi220-projects-kicker { color:#65c8e8; font-size:10px; letter-spacing:2px; margin-bottom:8px; }
+.pi220-projects-heading h2 { margin:0; color:#eef5fb; font-size:clamp(19px,2.2vw,26px); letter-spacing:1.4px; font-weight:600; }
+.pi220-projects-subtitle { margin:7px 0 0; color:#8fa4b8; font-size:12px; }
+.pi220-projects-toolbar { display:flex; align-items:center; gap:12px; margin-bottom:14px; }
+.pi220-projects-search { flex:1; min-width:0; box-sizing:border-box; border:1px solid rgba(100,160,195,.3); background:rgba(4,12,22,.72); color:#e4edf5; border-radius:3px; padding:11px 12px; font:inherit; font-size:12px; outline:none; }
+.pi220-projects-search:focus { border-color:#58b9dc; box-shadow:0 0 0 2px rgba(60,170,215,.1); }
+.pi220-projects-search::placeholder { color:#73889c; }
+.pi220-projects-count { color:#75c8e4; font-size:10px; letter-spacing:1px; white-space:nowrap; }
+.pi220-project-list { display:grid; gap:8px; padding-bottom:12px; }
+.pi220-project-card { border:1px solid rgba(102,145,176,.2); background:rgba(9,20,33,.55); }
+.pi220-project-details > summary { cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:14px; padding:13px 14px; }
+.pi220-project-details > summary::-webkit-details-marker { display:none; }
+.pi220-project-details > summary::after { content:"＋"; color:#65c8e8; font-size:17px; margin-left:5px; }
+.pi220-project-details[open] > summary::after { content:"−"; }
+.pi220-project-title-area { display:flex; flex-direction:column; gap:5px; min-width:0; }
+.pi220-project-name { color:#e5edf5; font-size:12px; letter-spacing:.45px; overflow-wrap:anywhere; }
+.pi220-project-serial { color:#7e9bb1; font-size:10px; letter-spacing:.35px; overflow-wrap:anywhere; }
+.pi220-project-index { color:#5d8199; font-size:10px; margin-left:auto; }
+.pi220-project-fields { border-top:1px solid rgba(102,145,176,.15); padding:5px 14px 13px; }
+.pi220-project-field { padding:10px 0 7px; border-bottom:1px solid rgba(102,145,176,.11); }
+.pi220-project-field:last-child { border-bottom:0; }
+.pi220-project-field-label { margin:0 0 5px; color:#68bdd9; font-size:9px; font-weight:600; letter-spacing:1.2px; }
+.pi220-project-field-value { margin:0; color:#b8c7d5; font-size:12px; line-height:1.65; white-space:pre-wrap; overflow-wrap:anywhere; }
+.pi220-project-empty { padding:24px 12px; text-align:center; color:#8fa4b8; font-size:11px; letter-spacing:1px; }
+@media (max-width:560px) {
+    .pi220-projects-toolbar { align-items:stretch; flex-direction:column; gap:8px; }
+    .pi220-projects-count { text-align:right; }
+    .pi220-projects { padding:12px; }
+    .pi220-project-details > summary { padding:12px 10px; }
+    .pi220-project-fields { padding-left:10px; padding-right:10px; }
+}
+
+
+/* ================================================
+   PI220 REVISION 009 — CORPORATION PRESENTATION
+   ================================================ */
+.pi220-corporation-host { width:100%; height:100%; min-height:0; }
+.pi220-corporation { height:100%; overflow:auto; box-sizing:border-box; padding:clamp(15px,2.3vw,28px); color:#dce7f3; }
+.pi220-corp-hero { padding:clamp(18px,3vw,34px); background:linear-gradient(125deg,rgba(12,29,46,.98),rgba(13,23,36,.92)); border:1px solid rgba(93,164,203,.25); border-left:3px solid #65c8e8; margin-bottom:22px; }
+.pi220-corp-kicker { color:#70c9e7; font-size:9px; font-weight:700; letter-spacing:2px; margin-bottom:12px; }
+.pi220-corp-hero h2 { margin:0; color:#f0f5fa; font-size:clamp(20px,3vw,30px); font-weight:600; letter-spacing:1.5px; }
+.pi220-corp-subtitle { color:#9db2c4; font-size:10px; letter-spacing:1.2px; line-height:1.7; margin:9px 0 22px; }
+.pi220-corp-motto { color:#d8bd8b; font-size:clamp(13px,1.8vw,17px); font-weight:700; letter-spacing:1.5px; }
+.pi220-corp-motto-sub { color:#9db2c4; font-size:11px; margin:7px 0 0; }
+.pi220-corp-section { margin:0 0 24px; }
+.pi220-corp-section h3 { color:#70c9e7; font-size:10px; letter-spacing:1.5px; font-weight:700; padding-bottom:10px; border-bottom:1px solid rgba(96,156,190,.2); margin:0 0 12px; }
+.pi220-corp-copy { color:#bdcbd8; font-size:12px; line-height:1.8; white-space:pre-line; max-width:950px; margin:0; }
+.pi220-corp-leaders { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
+.pi220-corp-leader { min-width:0; padding:14px; background:rgba(9,20,33,.55); border:1px solid rgba(102,145,176,.2); }
+.pi220-corp-number { color:#688da5; font-size:8px; letter-spacing:1.3px; margin-bottom:9px; }
+.pi220-corp-leader h4 { color:#e5edf5; font-size:11px; line-height:1.5; letter-spacing:.5px; margin:0 0 6px; overflow-wrap:anywhere; }
+.pi220-corp-role { color:#d4b77f; font-size:10px; line-height:1.6; margin-bottom:9px; }
+.pi220-corp-leader p { color:#aebdca; font-size:11px; line-height:1.65; margin:0; }
+.pi220-corp-signoff { color:#e7d1a5; font-size:13px; font-weight:700; letter-spacing:1.5px; margin-top:18px; }
+.pi220-corp-signoff-sub { color:#8fa4b8; font-size:10px; margin:7px 0 0; }
+@media(max-width:620px) { .pi220-corp-leaders { grid-template-columns:1fr; } .pi220-corporation { padding:12px; } }
+
+/* ================================================
+   PI220 REVISION 010 — HELP & SUPPORT
+   ================================================ */
+.pi220-help-host { width:100%; height:100%; min-height:0; }
+.pi220-help { height:100%; overflow:auto; box-sizing:border-box; padding:clamp(15px,2.3vw,28px); color:#dce7f3; }
+.pi220-help-hero { padding:clamp(18px,3vw,32px); margin-bottom:22px; background:linear-gradient(125deg,rgba(12,29,46,.98),rgba(13,23,36,.92)); border:1px solid rgba(93,164,203,.25); border-left:3px solid #65c8e8; }
+.pi220-help-kicker { color:#70c9e7; font-size:9px; font-weight:700; letter-spacing:2px; margin-bottom:12px; }
+.pi220-help-hero h2 { color:#f0f5fa; font-size:clamp(20px,3vw,28px); font-weight:600; letter-spacing:1.5px; margin:0 0 12px; }
+.pi220-help-hero p { color:#bdcbd8; font-size:12px; line-height:1.8; max-width:760px; margin:0; }
+.pi220-help-status { display:inline-block; margin-top:17px; padding:8px 10px; color:#d8bd8b; border:1px solid rgba(216,189,139,.35); background:rgba(216,189,139,.07); font-size:9px; font-weight:700; letter-spacing:1.2px; }
+.pi220-help-section { margin:0 0 24px; }
+.pi220-help-section h3 { color:#70c9e7; font-size:10px; letter-spacing:1.5px; font-weight:700; padding-bottom:10px; border-bottom:1px solid rgba(96,156,190,.2); margin:0 0 12px; }
+.pi220-help-copy { color:#bdcbd8; font-size:11px; line-height:1.8; max-width:980px; margin:0 0 11px; }
+.pi220-help-contacts { display:grid; gap:8px; margin-top:14px; }
+.pi220-help-contact { display:flex; flex-wrap:wrap; align-items:center; gap:12px; padding:12px 14px; background:rgba(9,20,33,.55); border:1px solid rgba(102,145,176,.2); }
+.pi220-help-contact-index { color:#688da5; font-size:8px; letter-spacing:1.2px; min-width:78px; }
+.pi220-help-contact a { color:#e0c895; font-size:12px; text-decoration:none; overflow-wrap:anywhere; }
+.pi220-help-contact a:hover, .pi220-help-contact a:focus { color:#75d5f1; text-decoration:underline; }
+.pi220-help-legal { padding-top:2px; }
+.pi220-help-footer { display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px; border-top:1px solid rgba(96,156,190,.2); padding:15px 0 4px; color:#d8bd8b; font-size:10px; letter-spacing:1.1px; }
+.pi220-help-footer span { color:#71899d; font-size:8px; }
+@media(max-width:560px) { .pi220-help { padding:12px; } .pi220-help-contact { align-items:flex-start; flex-direction:column; gap:7px; } }

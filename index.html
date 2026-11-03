@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#080e18">
+    <title>PI220 | Parallel Industries 220</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/window-manager.css">
+    <link rel="stylesheet" href="css/carousel.css">
+</head>
+<body>
+
+<!-- PI220 QUANTUM CONNECTION / BOOT EXPERIENCE -->
+<div id="pi220Boot" class="pi220-boot" role="status" aria-live="polite">
+    <div class="pi220-boot-orbit pi220-boot-orbit-one"></div>
+    <div class="pi220-boot-orbit pi220-boot-orbit-two"></div>
+    <div class="pi220-boot-core">
+        <div class="pi220-boot-mark">PI<span>220</span></div>
+        <div class="pi220-boot-ring"></div>
+    </div>
+    <div class="pi220-boot-brand">PARALLEL INDUSTRIES <span>220</span></div>
+    <div id="pi220BootPhase" class="pi220-boot-phase">ESTABLISHING QUANTUM LINK</div>
+    <div class="pi220-boot-track"><div id="pi220BootProgress" class="pi220-boot-progress"></div></div>
+    <div id="pi220BootDetail" class="pi220-boot-detail">SECURE CHANNEL / INITIALISING</div>
+    <button id="pi220BootSkip" class="pi220-boot-skip" type="button">SKIP CONNECTION <span>↗</span></button>
+    <div class="pi220-boot-foot">PI220 OPERATIVE ENVIRONMENT <span>•</span> CONNECTION PROTOCOL</div>
+</div>
+
+<div class="system-shell" id="pi220SystemShell">
+
+    <!-- LEFT SYSTEM TASKBAR -->
+    <aside class="system-taskbar">
+
+        <button id="startButton" class="start-button"
+                type="button" title="Start menu" aria-label="Open start menu">
+            <span>PI</span>
+        </button>
+
+        <div class="taskbar-apps">
+            <button type="button" title="Media" aria-label="Media">▣</button>
+            <button type="button" title="Projects" aria-label="Projects">▤</button>
+            <button type="button" title="Corporation" aria-label="Corporation">◈</button>
+            <button type="button" title="Help" aria-label="Help">?</button>
+            <button type="button" title="System" aria-label="System">⚙</button>
+        </div>
+
+        <!-- LANGUAGE AND SOUND CONTROLS -->
+        <div class="taskbar-controls">
+
+            <div class="language-control">
+                <button id="languageToggle"
+                        type="button"
+                        aria-label="Change language"
+                        title="Change language">
+                    EN
+                </button>
+            </div>
+
+            <button id="soundToggle"
+                    class="sound-toggle"
+                    type="button"
+                    aria-label="Mute sound"
+                    aria-pressed="false"
+                    title="Mute / Unmute">
+
+                <svg class="sound-icon" id="soundIcon"
+                     viewBox="0 0 24 24"
+                     width="22" height="22"
+                     fill="none"
+                     stroke="currentColor"
+                     stroke-width="1.8"
+                     stroke-linecap="round"
+                     stroke-linejoin="round"
+                     aria-hidden="true">
+
+                    <path d="M11 5 6 9H3v6h3l5 4V5Z"/>
+
+                    <g class="sound-waves">
+                        <path d="M15 9a5 5 0 0 1 0 6"/>
+                        <path d="M18 6a9 9 0 0 1 0 12"/>
+                    </g>
+
+                    <g class="sound-muted">
+                        <path d="m16 9 5 6"/>
+                        <path d="m21 9-5 6"/>
+                    </g>
+
+                </svg>
+            </button>
+
+        </div>
+
+        <!-- CLOCK AND DATE -->
+        <div class="taskbar-bottom">
+            <div id="systemClock" class="system-clock">00:00</div>
+            <div id="systemDate" class="system-date">00/00/0000</div>
+        </div>
+
+    </aside>
+
+    <!-- START MENU -->
+    <div id="startMenu" class="start-menu hidden">
+
+        <div class="start-menu-heading">
+            <span class="menu-kicker">PARALLEL INDUSTRIES</span>
+            <strong>PI220 OPERATIVE SYSTEM</strong>
+        </div>
+
+        <button type="button" data-command="/media">MEDIA EXPLORER</button>
+        <button type="button" data-command="/projects">PROJECTS</button>
+        <button type="button" data-command="/corporation">CORPORATION</button>
+        <button type="button" data-command="/system">SYSTEM</button>
+        <button type="button" data-command="/help">HELP</button>
+
+        <div class="start-menu-footer">OPERATIVE ENVIRONMENT <span>003</span></div>
+
+    </div>
+
+    <!-- MAIN SYSTEM AREA -->
+    <main class="system-main">
+
+        <section class="desktop-workspace">
+
+            <div class="desktop-grid" aria-hidden="true"></div>
+            <div class="desktop-orbit desktop-orbit-one" aria-hidden="true"></div>
+            <div class="desktop-orbit desktop-orbit-two" aria-hidden="true"></div>
+
+            <div class="desktop-intro">
+                <div class="desktop-overline">
+                    <span class="status-indicator"></span>
+                    PARALLEL INDUSTRIES / SYSTEMS DIVISION
+                </div>
+
+                <div class="desktop-title">PARALLEL INDUSTRIES <span>220</span></div>
+
+                <div class="desktop-subtitle">
+                    OPERATIVE ENVIRONMENT
+                </div>
+
+                <div class="desktop-divider"><span></span></div>
+
+                <div class="build-label">
+                    PROF DSC JESSE JESSEN <span>•</span> PROF DR SENTIENT 
+                </div>
+            </div>
+
+            <div class="desktop-corner desktop-corner-top">PI220 <span>/</span> OS</div>
+            <div class="desktop-corner desktop-corner-bottom">SYSTEM STATUS <span>● ONLINE</span></div>
+
+        </section>
+
+        <!-- SYSTEM TERMINAL -->
+        <section id="systemTerminal" class="system-terminal">
+
+            <div id="terminalResizeHandle"
+                 class="terminal-resize-handle"
+                 role="separator"
+                 aria-label="Resize system terminal"
+                 aria-orientation="horizontal"
+                 tabindex="0">
+            </div>
+
+            <div class="terminal-header">
+                <div class="terminal-heading">
+                    <span class="terminal-heading-mark">_</span>
+                    <span>SYSTEM TERMINAL</span>
+                    <span class="terminal-header-divider">/</span>
+                    <span class="terminal-header-subtitle">COMMAND INTERFACE</span>
+                </div>
+                <span class="terminal-status"><i></i> LIVE</span>
+            </div>
+
+            <div id="terminalOutput" class="terminal-output" aria-live="polite">
+                <div>[SYS] PI220 INITIALIZED</div>
+                <div>[SYS] SYSTEM INTERFACE READY</div>
+                <div>[SYS] AWAITING OPERATIVE COMMAND</div>
+            </div>
+
+            <form id="terminalForm" class="terminal-input">
+
+                <span class="command-prefix">/</span>
+
+                <input id="terminalCommand"
+                       type="text"
+                       placeholder="Enter command..."
+                       autocomplete="off"
+                       spellcheck="false"
+                       aria-label="Terminal command">
+
+                <button type="submit">EXECUTE <span>↗</span></button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/window-manager.js"></script>
+<script src="js/projects-data.js"></script>
+<script src="js/projects-app.js"></script>
+<script src="js/corporation-app.js"></script>
+<script src="js/help-app.js"></script>
+<script src="js/carousel.js"></script>
+</body>
+</html>
