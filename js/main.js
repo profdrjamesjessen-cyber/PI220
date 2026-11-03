@@ -478,7 +478,47 @@ document.addEventListener("DOMContentLoaded", function () {
 
     themeAudio.addEventListener("play", updateSoundInterface);
     themeAudio.addEventListener("pause", updateSoundInterface);
-    themeAudio.addEventListener("ended", updateSoundInterface);
+    themeAudio.addEventListener("ended", function () {
+
+    const isOriginal = trackSelect.value.indexOf("Extended_Edition") !== -1;
+
+    if (isOriginal) {
+
+        // Automatically advance from Track 01 to Track 02.
+        const developedTrack = "media/PI220_Beyond_the_Horizon_Developed_Edition_v1.mp3";
+
+        trackSelect.value = developedTrack;
+        themeAudio.src = developedTrack;
+        themeAudio.load();
+
+        trackSubtitle.textContent = "TRACK 02 · DEVELOPED EDITION";
+
+        // Keep playback enabled for the automatic transition.
+        systemMuted = false;
+        themeAudio.muted = false;
+
+        log("[SYS] PI220 ORIGINAL EXTENDED EDITION COMPLETED");
+        log("[SYS] AUTOMATIC TRANSITION TO DEVELOPED EDITION");
+
+        themeAudio.play().then(function () {
+            log("[SYS] PI220 DEVELOPED EDITION PLAYING");
+            applyAudioState();
+        }).catch(function () {
+            systemMuted = true;
+            audioStatus.textContent = "PLAYBACK UNAVAILABLE — CHECK AUDIO FILE";
+            applyAudioState();
+        });
+
+    } else {
+
+        // Track 02 has finished: stop the sequence.
+        systemMuted = true;
+        log("[SYS] PI220 TWO-TRACK SOUND EXPERIENCE COMPLETED");
+        applyAudioState();
+
+    }
+
+});
 
     /* Existing and future media obey the global mute state. */
     const audioObserver = new MutationObserver(function () {
