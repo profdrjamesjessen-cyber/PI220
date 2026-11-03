@@ -362,6 +362,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const volumeSlider = document.getElementById("pi220Volume");
     const volumeValue = document.getElementById("pi220VolumeValue");
     const audioStatus = document.getElementById("pi220AudioStatus");
+    const trackSelect = document.getElementById("pi220TrackSelect");
+    const trackSubtitle = document.getElementById("pi220SoundTrackSubtitle");
 
     let systemMuted = true;
     let rememberedVolume = 0.35;
@@ -406,6 +408,27 @@ document.addEventListener("DOMContentLoaded", function () {
     soundToggle.addEventListener("click", function () {
         soundPanel.hidden = !soundPanel.hidden;
         updateSoundInterface();
+    });
+
+    trackSelect.addEventListener("change", function () {
+        const wasPlaying = !themeAudio.paused;
+        themeAudio.pause();
+        themeAudio.currentTime = 0;
+        systemMuted = true;
+        themeAudio.src = trackSelect.value;
+        themeAudio.load();
+        const isDeveloped = trackSelect.value.indexOf("Developed_Edition") !== -1;
+        trackSubtitle.textContent = isDeveloped
+            ? "TRACK 02 · DEVELOPED EDITION"
+            : "TRACK 01 · OFFICIAL ORIGINAL THEME · EXTENDED EDITION";
+        audioStatus.textContent = "TRACK SELECTED · READY TO PLAY";
+        log(isDeveloped
+            ? "[SYS] PI220 DEVELOPED EDITION SELECTED"
+            : "[SYS] PI220 ORIGINAL EXTENDED EDITION SELECTED");
+        applyAudioState();
+        if (wasPlaying) {
+            audioStatus.textContent = "TRACK CHANGED · PRESS PLAY TO CONTINUE";
+        }
     });
 
     playPauseButton.addEventListener("click", function () {

@@ -92,7 +92,12 @@
             <div id="pi220SoundPanel" class="pi220-sound-panel" hidden>
                 <div class="pi220-sound-panel-kicker">PI220 SOUND EXPERIENCE</div>
                 <div class="pi220-sound-track-title">BEYOND THE HORIZON</div>
-                <div class="pi220-sound-track-subtitle">OFFICIAL ORIGINAL THEME · EXTENDED EDITION</div>
+                <div id="pi220SoundTrackSubtitle" class="pi220-sound-track-subtitle">TRACK 01 · OFFICIAL ORIGINAL THEME · EXTENDED EDITION</div>
+                <label class="pi220-track-label" for="pi220TrackSelect">SELECT SOUNDTRACK</label>
+                <select id="pi220TrackSelect" class="pi220-track-select">
+                    <option value="media/PI220_Beyond_the_Horizon_Extended_Edition_v1.mp3">01 · ORIGINAL EXTENDED EDITION</option>
+                    <option value="media/PI220_Beyond_the_Horizon_Developed_Edition_v1.mp3">02 · DEVELOPED EDITION</option>
+                </select>
                 <div class="pi220-sound-actions">
                     <button id="pi220PlayPause" type="button">PLAY THEME</button>
                     <button id="pi220Stop" type="button" aria-label="Stop soundtrack">STOP</button>
@@ -109,9 +114,7 @@
 
         </div>
 
-        <audio id="pi220ThemeAudio" preload="none" loop>
-            <source src="media/PI220_Beyond_the_Horizon_Extended_Edition_v1.wav" type="audio/wav">
-        </audio>
+        <audio id="pi220ThemeAudio" src="media/PI220_Beyond_the_Horizon_Extended_Edition_v1.mp3" preload="none" loop></audio>
 
         <!-- CLOCK AND DATE -->
         <div class="taskbar-bottom">
