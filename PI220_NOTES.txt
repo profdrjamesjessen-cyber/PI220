@@ -1,0 +1,19 @@
+PI220 REVISION 011 — OFFICIAL SOUNDTRACK INTEGRATION
+
+Included:
+- Official original theme: Beyond the Horizon — Extended Edition v1.0
+- Existing taskbar sound control opens a compact sound panel.
+- User-initiated Play/Pause and Stop controls.
+- Independent volume slider.
+- Sound is stopped and muted by default; no autoplay.
+- Volume preference is stored locally where browser storage is available.
+- Existing window manager, applications, terminal and boot sequence retained.
+- Existing PI220Audio public interface retained and extended.
+
+Deployment:
+Upload the contents of the PI220 folder to the root of the existing PI220 GitHub repository,
+preserving the folder structure. The media file must remain at:
+media/PI220_Beyond_the_Horizon_Extended_Edition_v1.wav
+
+This revision is a first integration build. Test playback, volume, pause/stop and mobile layout
+on the deployed site before treating it as final.

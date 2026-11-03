@@ -351,99 +351,143 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* ================================================
-       GLOBAL PI220 AUDIO CONTROL
+       PI220 OFFICIAL SOUND EXPERIENCE
+       User-initiated playback only; never autoplay.
        ================================================ */
 
-    let systemMuted = false;
+    const soundPanel = document.getElementById("pi220SoundPanel");
+    const themeAudio = document.getElementById("pi220ThemeAudio");
+    const playPauseButton = document.getElementById("pi220PlayPause");
+    const stopAudioButton = document.getElementById("pi220Stop");
+    const volumeSlider = document.getElementById("pi220Volume");
+    const volumeValue = document.getElementById("pi220VolumeValue");
+    const audioStatus = document.getElementById("pi220AudioStatus");
 
+    let systemMuted = true;
+    let rememberedVolume = 0.35;
 
-    function applyAudioState() {
-
-        const mediaElements = document.querySelectorAll(
-            "audio, video"
-        );
-
-        mediaElements.forEach(function (media) {
-            media.muted = systemMuted;
-        });
-
-
-        soundIcon.classList.toggle(
-            "is-muted",
-            systemMuted
-        );
-
-
-        soundToggle.setAttribute(
-            "aria-pressed",
-            systemMuted ? "true" : "false"
-        );
-
-
-        soundToggle.setAttribute(
-            "aria-label",
-            systemMuted ? "Unmute sound" : "Mute sound"
-        );
-
-
-        soundToggle.title = systemMuted
-            ? "Unmute sound"
-            : "Mute sound";
-
+    try {
+        const storedVolume = localStorage.getItem("pi220SoundVolume");
+        if (storedVolume !== null) {
+            const parsedVolume = Number(storedVolume);
+            if (Number.isFinite(parsedVolume)) {
+                rememberedVolume = Math.max(0, Math.min(1, parsedVolume));
+            }
+        }
+    } catch (error) {
+        /* Storage may be unavailable; sound controls remain functional. */
     }
 
+    themeAudio.volume = rememberedVolume;
+    volumeSlider.value = String(Math.round(rememberedVolume * 100));
+    volumeValue.textContent = volumeSlider.value + "%";
+
+    function updateSoundInterface() {
+        const playing = !themeAudio.paused && !themeAudio.ended;
+        soundIcon.classList.toggle("is-muted", systemMuted || !playing);
+        soundToggle.setAttribute("aria-pressed", systemMuted ? "true" : "false");
+        soundToggle.setAttribute("aria-label", soundPanel.hidden
+            ? "Open sound controls" : "Close sound controls");
+        soundToggle.title = "PI220 sound controls";
+
+        playPauseButton.textContent = playing ? "PAUSE THEME" : "PLAY THEME";
+        audioStatus.textContent = systemMuted
+            ? "SOUND MUTED"
+            : (playing ? "THEME PLAYING" : "SOUND OFF · READY");
+    }
+
+    function applyAudioState() {
+        document.querySelectorAll("audio, video").forEach(function (media) {
+            media.muted = systemMuted;
+        });
+        updateSoundInterface();
+    }
 
     soundToggle.addEventListener("click", function () {
-
-        systemMuted = !systemMuted;
-
-        applyAudioState();
-
-        log(
-            systemMuted
-                ? "[SYS] AUDIO MUTED"
-                : "[SYS] AUDIO RESTORED"
-        );
-
+        soundPanel.hidden = !soundPanel.hidden;
+        updateSoundInterface();
     });
 
+    playPauseButton.addEventListener("click", function () {
+        if (!themeAudio.paused) {
+            themeAudio.pause();
+            systemMuted = true;
+            log("[SYS] PI220 THEME PAUSED");
+            applyAudioState();
+            return;
+        }
 
-    /* Apply current state to media added in the future */
+        systemMuted = false;
+        themeAudio.muted = false;
+        const playRequest = themeAudio.play();
+        if (playRequest && typeof playRequest.then === "function") {
+            playRequest.then(function () {
+                log("[SYS] PI220 OFFICIAL THEME PLAYING");
+                applyAudioState();
+            }).catch(function () {
+                systemMuted = true;
+                audioStatus.textContent = "PLAYBACK UNAVAILABLE — CHECK AUDIO FILE";
+                applyAudioState();
+            });
+        } else {
+            applyAudioState();
+        }
+    });
 
+    stopAudioButton.addEventListener("click", function () {
+        themeAudio.pause();
+        themeAudio.currentTime = 0;
+        systemMuted = true;
+        log("[SYS] PI220 THEME STOPPED");
+        applyAudioState();
+    });
+
+    volumeSlider.addEventListener("input", function () {
+        rememberedVolume = Number(volumeSlider.value) / 100;
+        themeAudio.volume = rememberedVolume;
+        volumeValue.textContent = volumeSlider.value + "%";
+        try {
+            localStorage.setItem("pi220SoundVolume", String(rememberedVolume));
+        } catch (error) {
+            /* Continue without persistence if storage is blocked. */
+        }
+    });
+
+    themeAudio.addEventListener("play", updateSoundInterface);
+    themeAudio.addEventListener("pause", updateSoundInterface);
+    themeAudio.addEventListener("ended", updateSoundInterface);
+
+    /* Existing and future media obey the global mute state. */
     const audioObserver = new MutationObserver(function () {
         applyAudioState();
     });
+    audioObserver.observe(document.body, { childList: true, subtree: true });
 
-
-    audioObserver.observe(document.body, {
-        childList: true,
-        subtree: true
-    });
-
-
-    /* Public audio interface for future PI220 modules */
-
+    /* Public audio interface retained for future PI220 modules. */
     window.PI220Audio = {
-
-        get muted() {
-            return systemMuted;
-        },
-
+        get muted() { return systemMuted; },
         mute: function () {
             systemMuted = true;
             applyAudioState();
         },
-
         unmute: function () {
             systemMuted = false;
             applyAudioState();
         },
-
         toggle: function () {
             systemMuted = !systemMuted;
             applyAudioState();
+        },
+        playTheme: function () {
+            systemMuted = false;
+            themeAudio.muted = false;
+            return themeAudio.play();
+        },
+        pauseTheme: function () {
+            themeAudio.pause();
+            systemMuted = true;
+            applyAudioState();
         }
-
     };
 
 

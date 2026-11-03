@@ -1169,3 +1169,90 @@ button {
 .pi220-help-footer { display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px; border-top:1px solid rgba(96,156,190,.2); padding:15px 0 4px; color:#d8bd8b; font-size:10px; letter-spacing:1.1px; }
 .pi220-help-footer span { color:#71899d; font-size:8px; }
 @media(max-width:560px) { .pi220-help { padding:12px; } .pi220-help-contact { align-items:flex-start; flex-direction:column; gap:7px; } }
+
+
+/* ================================================
+   PI220 OFFICIAL SOUND EXPERIENCE
+   ================================================ */
+.pi220-sound-panel {
+    position: absolute;
+    left: 76px;
+    bottom: 82px;
+    z-index: 1200;
+    width: min(310px, calc(100vw - 96px));
+    padding: 18px;
+    color: #dce8f4;
+    background: rgba(8, 16, 29, 0.98);
+    border: 1px solid rgba(69, 159, 205, 0.42);
+    box-shadow: 0 14px 38px rgba(0, 0, 0, 0.48);
+    font-family: inherit;
+}
+.pi220-sound-panel[hidden] { display: none !important; }
+.pi220-sound-panel-kicker {
+    color: #65c7e9;
+    font-size: 9px;
+    letter-spacing: 1.8px;
+    margin-bottom: 9px;
+}
+.pi220-sound-track-title {
+    color: #f0f5fa;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1.1px;
+}
+.pi220-sound-track-subtitle {
+    color: #8b9daf;
+    font-size: 8px;
+    letter-spacing: 1px;
+    line-height: 1.6;
+    margin-top: 5px;
+}
+.pi220-sound-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 16px;
+}
+.pi220-sound-actions button {
+    min-height: 34px;
+    padding: 0 12px;
+    color: #dff7ff;
+    background: rgba(30, 105, 139, 0.2);
+    border: 1px solid rgba(82, 183, 220, 0.5);
+    font: inherit;
+    font-size: 9px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+.pi220-sound-actions button:hover,
+.pi220-sound-actions button:focus-visible {
+    background: rgba(39, 139, 177, 0.35);
+    outline: 1px solid #65c7e9;
+}
+.pi220-volume-label {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+    color: #9fb3c6;
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+.pi220-volume {
+    display: block;
+    width: 100%;
+    margin: 9px 0 0;
+    accent-color: #55b9df;
+    cursor: pointer;
+}
+.pi220-audio-status {
+    margin-top: 12px;
+    color: #69c5a2;
+    font-size: 8px;
+    letter-spacing: 1.2px;
+}
+@media (max-width: 600px) {
+    .pi220-sound-panel {
+        left: 66px;
+        bottom: 76px;
+        width: min(290px, calc(100vw - 82px));
+    }
+}

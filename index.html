@@ -89,7 +89,29 @@
                 </svg>
             </button>
 
+            <div id="pi220SoundPanel" class="pi220-sound-panel" hidden>
+                <div class="pi220-sound-panel-kicker">PI220 SOUND EXPERIENCE</div>
+                <div class="pi220-sound-track-title">BEYOND THE HORIZON</div>
+                <div class="pi220-sound-track-subtitle">OFFICIAL ORIGINAL THEME · EXTENDED EDITION</div>
+                <div class="pi220-sound-actions">
+                    <button id="pi220PlayPause" type="button">PLAY THEME</button>
+                    <button id="pi220Stop" type="button" aria-label="Stop soundtrack">STOP</button>
+                </div>
+                <label class="pi220-volume-label" for="pi220Volume">
+                    <span>VOLUME</span><span id="pi220VolumeValue">35%</span>
+                </label>
+                <input id="pi220Volume" class="pi220-volume" type="range"
+                       min="0" max="100" value="35" step="1">
+                <div id="pi220AudioStatus" class="pi220-audio-status" aria-live="polite">
+                    SOUND OFF · READY
+                </div>
+            </div>
+
         </div>
+
+        <audio id="pi220ThemeAudio" preload="none" loop>
+            <source src="media/PI220_Beyond_the_Horizon_Extended_Edition_v1.wav" type="audio/wav">
+        </audio>
 
         <!-- CLOCK AND DATE -->
         <div class="taskbar-bottom">
