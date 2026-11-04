@@ -19,7 +19,6 @@
         'https://i.ibb.co/rRhKCCFS/PARALLEL-I-NEWS.png',
         'https://i.ibb.co/hJTnJbwJ/SIGHT-TEAK-OSOK.png',
         'https://i.ibb.co/V0JMYfSt/SPECIAL-OPERATIONS.png',
-        'https://i.ibb.co/tPzyF0yv/THIRD-WORLD-WAR-ONGOING.png',
         'https://i.ibb.co/7xMYS7yf/PARALLEL-I-NEWS.png',
         'https://i.ibb.co/9m5F11wj/NOVA-EUR.png',
         'https://i.ibb.co/XrPzfxZf/NOVA-EUR-ELECTRIC-VAULT-WALLET.png',
