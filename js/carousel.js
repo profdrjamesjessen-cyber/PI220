@@ -8,10 +8,8 @@
     window.PI220_CAROUSEL_IMAGES = [
 
 
-        'https://i.ibb.co/7JSbmd4w/WORLD-WAR-III-LEGAL-EXECUTIONS.png',
-        'https://i.ibb.co/fGn5qRPH/LEGAL-EXECUTIONS.png',
+        'https://i.ibb.co/3yrRKRxK/LEGAL-EXECUTIONS.png',
         'https://i.ibb.co/XxnTGZbd/PARALLEL-INDUSTRIES-220.png',
-        'https://i.ibb.co/hJbTFkYX/LAST-WARN-DEATH-PENALTY.png',
         'https://i.ibb.co/vxgJ4zGF/Parallel-Industries-220.png',
         'https://i.ibb.co/xSCCcYBF/EVA-MAGAZINE-SPECIAL-EDITION-FULL-IN-391-SERVERS.png',
         'https://i.ibb.co/VWKy1dcz/EVA-MAGAZINE-THE-INTERVIEW-TO-EVA.png',
