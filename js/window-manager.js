@@ -60,9 +60,32 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    var systemTerminal = document.getElementById("systemTerminal");
+    var savedTerminalHeight = null;
+    var systemAppModeActive = false;
+
+    function setSystemAppMode(active) {
+        if (!systemTerminal) return;
+
+        if (active && !systemAppModeActive) {
+            savedTerminalHeight = systemTerminal.style.getPropertyValue("--terminal-height");
+            systemTerminal.style.setProperty("--terminal-height", "100px");
+            systemAppModeActive = true;
+        } else if (!active && systemAppModeActive) {
+            if (savedTerminalHeight) {
+                systemTerminal.style.setProperty("--terminal-height", savedTerminalHeight);
+            } else {
+                systemTerminal.style.removeProperty("--terminal-height");
+            }
+            savedTerminalHeight = null;
+            systemAppModeActive = false;
+        }
+    }
+
     function closeApp(id) {
         var entry = windows[id];
         if (!entry) return;
+        if (id === "system") setSystemAppMode(false);
         entry.element.parentNode.removeChild(entry.element);
         removeTaskButton(entry);
         delete windows[id];
@@ -124,6 +147,7 @@ function addTaskButton(id, title) {
                 if (!app) return;
                 home.hidden = true;
                 view.hidden = false;
+                setSystemAppMode(true);
                 title.textContent = app.name;
                 external.href = app.url;
                 frame.title = app.name;
@@ -136,6 +160,7 @@ function addTaskButton(id, title) {
         back.addEventListener("click", function () {
             view.hidden = true;
             home.hidden = false;
+            setSystemAppMode(false);
             logSystem("[SYS] RETURNED TO SYSTEM CONTROL");
         });
     }
@@ -166,11 +191,9 @@ function addTaskButton(id, title) {
         win.setAttribute("role", "dialog");
         win.setAttribute("aria-label", app.title);
         win.dataset.app = id;
-        /* System Control hosts full applications, so give it a larger
-           default viewport than ordinary PI220 utility windows. */
         if (id === "system") {
-            win.style.width = "min(1180px, 96%)";
-            win.style.height = "94%";
+            win.style.width = "min(1180px, 98%)";
+            win.style.height = "100%";
         } else {
             win.style.width = "min(760px, 88%)";
             win.style.height = "min(520px, 86%)";
