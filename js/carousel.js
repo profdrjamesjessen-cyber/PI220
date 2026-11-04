@@ -8,11 +8,9 @@
     window.PI220_CAROUSEL_IMAGES = [
 
 
-
+        'https://i.ibb.co/gndJKqB/NO-TE-TOMES-NINGUNA-PUTA-CONFIANZA-ZORRA-HOMBRE-PUTA.png',
         'https://i.ibb.co/BKG3Kyhg/WORLD-WAR-III-LEGAL-EXECUTIONS.png',
         'https://i.ibb.co/5XF5WK7f/PI220.png',
-        'https://i.ibb.co/Csh6zzRm/THIRD-WORLD-WAR-SPECIAL-OPERATIONS.png',
-        'https://i.ibb.co/3yrRKRxK/LEGAL-EXECUTIONS.png',
         'https://i.ibb.co/XxnTGZbd/PARALLEL-INDUSTRIES-220.png',
         'https://i.ibb.co/vxgJ4zGF/Parallel-Industries-220.png',
         'https://i.ibb.co/xSCCcYBF/EVA-MAGAZINE-SPECIAL-EDITION-FULL-IN-391-SERVERS.png',
