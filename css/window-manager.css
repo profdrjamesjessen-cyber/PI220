@@ -72,9 +72,22 @@
 /* PI220 APPLICATION INTEGRATION — SYSTEM CONTROL / APP-001 */
 .pi-window-content:has(.pi220-system-control) {
     padding: 0;
-    overflow: hidden;
+    overflow: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(85,188,232,.45) transparent;
 }
-.pi220-system-control { width: 100%; height: 100%; min-height: 0; display: flex; flex-direction: column; }
+
+/* Keep a usable application viewport even when the desktop workspace is short.
+   The parent window content becomes the scroll container when required. */
+.pi220-system-control {
+    width: 100%;
+    height: 100%;
+    min-height: 620px;
+    display: flex;
+    flex-direction: column;
+}
+
+
 .pi220-system-home { padding: 25px 27px; overflow: auto; }
 .pi220-system-intro { margin: 0 0 24px; color: #aebfcd; }
 .pi220-app-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 230px)); gap: 14px; }
@@ -89,12 +102,12 @@
 .pi220-folder-name { color: #edf7fd; font-size: 12px; font-weight: 800; letter-spacing: 1px; }
 .pi220-folder-meta { color: #8296a8; font-size: 9px; letter-spacing: .8px; }
 .pi220-folder-action { margin-top: auto; color: #b99a61; font-size: 9px; font-weight: 800; letter-spacing: 1px; }
-.pi220-system-app-view { flex: 1; min-height: 0; display: flex; flex-direction: column; }
+.pi220-system-app-view { flex: 1; min-height: 578px; display: flex; flex-direction: column; }
 .pi220-system-app-view[hidden], .pi220-system-home[hidden] { display: none !important; }
 .pi220-app-toolbar { min-height: 42px; flex: 0 0 auto; display: flex; align-items: center; gap: 14px; padding: 0 12px; background: #101d2b; border-bottom: 1px solid #263b50; }
 .pi220-app-toolbar button, .pi220-app-toolbar a { padding: 6px 8px; color: #83d5f5; background: transparent; border: 1px solid rgba(85,188,232,.25); font: inherit; font-size: 9px; font-weight: 700; letter-spacing: .6px; text-decoration: none; cursor: pointer; white-space: nowrap; }
 .pi220-app-toolbar-title { flex: 1; min-width: 0; color: #b9cbd8; font-size: 9px; font-weight: 700; letter-spacing: .8px; text-align: center; }
-.pi220-system-app-frame { display: block; width: 100%; height: 100%; min-height: 0; flex: 1; border: 0; background: #080f18; }
+.pi220-system-app-frame { display: block; width: 100%; height: auto; min-width: 0; min-height: 0; flex: 1 1 0; border: 0; background: #080f18; }
 @media (max-width: 700px) {
     .pi220-system-home { padding: 18px; }
     .pi220-app-toolbar { gap: 6px; padding: 0 6px; }

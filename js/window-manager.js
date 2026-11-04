@@ -166,8 +166,15 @@ function addTaskButton(id, title) {
         win.setAttribute("role", "dialog");
         win.setAttribute("aria-label", app.title);
         win.dataset.app = id;
-        win.style.width = "min(760px, 88%)";
-        win.style.height = "min(520px, 86%)";
+        /* System Control hosts full applications, so give it a larger
+           default viewport than ordinary PI220 utility windows. */
+        if (id === "system") {
+            win.style.width = "min(1180px, 96%)";
+            win.style.height = "94%";
+        } else {
+            win.style.width = "min(760px, 88%)";
+            win.style.height = "min(520px, 86%)";
+        }
         win.style.zIndex = ++z;
         workspace.querySelector("#windowLayer").appendChild(win);
         win.style.left = Math.max(0, (layer.clientWidth - win.offsetWidth) / 2) + "px";
