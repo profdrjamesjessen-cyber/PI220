@@ -8,6 +8,9 @@
     window.PI220_CAROUSEL_IMAGES = [
 
 
+
+
+        'https://i.ibb.co/5XF5WK7f/PI220.png',
         'https://i.ibb.co/Csh6zzRm/THIRD-WORLD-WAR-SPECIAL-OPERATIONS.png',
         'https://i.ibb.co/3yrRKRxK/LEGAL-EXECUTIONS.png',
         'https://i.ibb.co/XxnTGZbd/PARALLEL-INDUSTRIES-220.png',
