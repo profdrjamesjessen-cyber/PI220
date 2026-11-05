@@ -8,7 +8,7 @@
     window.PI220_CAROUSEL_IMAGES = [
 
 
-
+        'https://i.ibb.co/tpC031Q0/DONALD-TRUMP.png',
         'https://i.ibb.co/BKG3Kyhg/WORLD-WAR-III-LEGAL-EXECUTIONS.png',
         'https://i.ibb.co/Q75CQQFb/PARALLEL-INDUSTRIES-220.png',
         'https://i.ibb.co/YTVSqjNQ/AGENDA.png',
