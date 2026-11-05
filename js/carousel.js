@@ -8,9 +8,7 @@
     window.PI220_CAROUSEL_IMAGES = [
 
 
-        'https://i.ibb.co/tpC031Q0/DONALD-TRUMP.png',
-        'https://i.ibb.co/zH823wpf/DONALD-TRUMP-DEATH-PENALTY-LEGAL-EXECUTIONS-MASSACRE.png',
-        'https://i.ibb.co/BKG3Kyhg/WORLD-WAR-III-LEGAL-EXECUTIONS.png',
+        'https://i.ibb.co/nskvPt9K/TAKE-ME-THERE.jpg',
         'https://i.ibb.co/Q75CQQFb/PARALLEL-INDUSTRIES-220.png',
         'https://i.ibb.co/YTVSqjNQ/AGENDA.png',
         'https://i.ibb.co/0RzYGPgZ/PI220-THE-AGENDA-OF-THE-DIRECTOR-PRIVATE.png',
