@@ -39,10 +39,60 @@ document.addEventListener("DOMContentLoaded", function () {
             title: "HELP & SUPPORT", code: "SUP-01 / CONTACT",
             content: '<div id="pi220HelpHost" class="pi220-help-host"></div>'
         },
-        system: {
-            title: "SYSTEM CONTROL", code: "SYS-01 / CONTROL",
-            content: '<div class="pi220-system-control"><div class="pi220-system-home"><div class="wm-panel-heading">SYSTEM CONTROL</div><p class="wm-lead">APPLICATIONS & SYSTEM SERVICES</p><p class="pi220-system-intro">Independent applications integrated into the PI220 operative environment.</p><div class="pi220-app-grid"><button type="button" class="pi220-app-folder" data-launch-app="livecam"><span class="pi220-folder-icon">▣</span><span class="pi220-folder-name">PI220 LIVE CAM</span><span class="pi220-folder-meta">APP-001 · CAMERA SYSTEM</span><span class="pi220-folder-action">OPEN APPLICATION →</span></button><button type="button" class="pi220-app-folder" data-launch-app="radio"><span class="pi220-folder-icon">♫</span><span class="pi220-folder-name">PI220 RADIO</span><span class="pi220-folder-meta">APP-002 · BROADCAST NETWORK</span><span class="pi220-folder-action">OPEN APPLICATION →</span></button></div><div class="wm-status-row"><span class="wm-status-dot"></span> SYSTEM CONTROL ACTIVE · 02 APPLICATIONS REGISTERED</div></div><div class="pi220-system-app-view" hidden><div class="pi220-app-toolbar"><button type="button" class="pi220-app-back">← SYSTEM CONTROL</button><span class="pi220-app-toolbar-title" data-app-title></span><a data-app-external href="#" target="_blank" rel="noopener noreferrer">OPEN EXTERNALLY ↗</a></div><iframe class="pi220-system-app-frame" title="PI220 application" src="about:blank" allow="camera; microphone; fullscreen" allowfullscreen loading="lazy"></iframe></div></div>'
-        }
+        
+system: {
+    title: "SYSTEM CONTROL",
+    code: "SYS-01 / CONTROL",
+
+    content: '<div class="pi220-system-control">' +
+        '<div class="pi220-system-home">' +
+            '<div class="wm-panel-heading">SYSTEM CONTROL</div>' +
+            '<p class="wm-lead">APPLICATIONS & SYSTEM SERVICES</p>' +
+            '<p class="pi220-system-intro">Independent applications integrated into the PI220 operative environment.</p>' +
+
+            '<div class="pi220-app-grid">' +
+
+                '<button type="button" class="pi220-app-folder" data-launch-app="livecam">' +
+                    '<span class="pi220-folder-icon">▣</span>' +
+                    '<span class="pi220-folder-name">PI220 LIVE CAM</span>' +
+                    '<span class="pi220-folder-meta">APP-001 · CAMERA SYSTEM</span>' +
+                    '<span class="pi220-folder-action">OPEN APPLICATION →</span>' +
+                '</button>' +
+
+                '<button type="button" class="pi220-app-folder" data-launch-app="radio">' +
+                    '<span class="pi220-folder-icon">♫</span>' +
+                    '<span class="pi220-folder-name">PI220 RADIO</span>' +
+                    '<span class="pi220-folder-meta">APP-002 · BROADCAST NETWORK</span>' +
+                    '<span class="pi220-folder-action">OPEN APPLICATION →</span>' +
+                '</button>' +
+
+                '<button type="button" class="pi220-app-folder" data-launch-app="agenda">' +
+                    '<span class="pi220-folder-icon">▦</span>' +
+                    '<span class="pi220-folder-name">PI220 AGENDA</span>' +
+                    '<span class="pi220-folder-meta">APP-003 · CALENDAR SYSTEM</span>' +
+                    '<span class="pi220-folder-action">OPEN APPLICATION →</span>' +
+                '</button>' +
+
+            '</div>' +
+
+            '<div class="wm-status-row">' +
+                '<span class="wm-status-dot"></span>' +
+                ' SYSTEM CONTROL ACTIVE · 03 APPLICATIONS REGISTERED' +
+            '</div>' +
+        '</div>' +
+
+        '<div class="pi220-system-app-view" hidden>' +
+            '<div class="pi220-app-toolbar">' +
+                '<button type="button" class="pi220-app-back">← SYSTEM CONTROL</button>' +
+                '<span class="pi220-app-toolbar-title" data-app-title></span>' +
+                '<a data-app-external href="#" target="_blank" rel="noopener noreferrer">OPEN EXTERNALLY ↗</a>' +
+            '</div>' +
+
+            '<iframe class="pi220-system-app-frame" title="PI220 application" src="about:blank" allow="camera; microphone; fullscreen" allowfullscreen loading="lazy"></iframe>' +
+        '</div>' +
+    '</div>'
+}
+
     };
 
     function focus(win) {
@@ -138,6 +188,12 @@ function addTaskButton(id, title) {
                 name: "PI220 RADIO · APP-002",
                 url: "https://profdrjamesjessen-cyber.github.io/PI220-LIVE-RADIO/",
                 permissions: "microphone; fullscreen"
+            },
+
+            agenda: {
+                name: "PI220 AGENDA · APP-003",
+                url: "https://profdrjamesjessen-cyber.github.io/PI220-AGENDA/",
+                permissions: "fullscreen"
             }
         };
 
