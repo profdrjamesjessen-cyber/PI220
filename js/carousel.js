@@ -9,6 +9,7 @@
 
 
         'https://i.ibb.co/Q75CQQFb/PARALLEL-INDUSTRIES-220.png',
+        'https://i.ibb.co/YTVSqjNQ/AGENDA.png',
         'https://i.ibb.co/5XF5WK7f/PI220.png',
         'https://i.ibb.co/XxnTGZbd/PARALLEL-INDUSTRIES-220.png',
         'https://i.ibb.co/vxgJ4zGF/Parallel-Industries-220.png',
