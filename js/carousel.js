@@ -9,7 +9,6 @@
 
 
         'https://i.ibb.co/tPxHnv8R/KILL-HIM.png',
-        'https://i.ibb.co/jP78WgXt/TE-VAMOS-A-MATAR.png',
         'https://i.ibb.co/My5nhmMy/PARALLEL-INDUSTRIES-220.png',
         'https://i.ibb.co/nskvPt9K/TAKE-ME-THERE.jpg',
         'https://i.ibb.co/Q75CQQFb/PARALLEL-INDUSTRIES-220.png',
