@@ -12,6 +12,7 @@
         'https://i.ibb.co/67HBs3TV/THE-DIRECTORATE.png',
         'https://i.ibb.co/QhZW5Bc/PROF-DSC-JESSE-JESSEN.png',
         'https://i.ibb.co/1tgpP2BS/TAKE-ME-THERE.png',
+        'https://i.ibb.co/n8B13Lfx/30-MINUTES-30-SECONDS-MUERTE-A-ISRAEL.png',
         'https://i.ibb.co/My5nhmMy/PARALLEL-INDUSTRIES-220.png',
         'https://i.ibb.co/nskvPt9K/TAKE-ME-THERE.jpg',
         'https://i.ibb.co/Q75CQQFb/PARALLEL-INDUSTRIES-220.png',
