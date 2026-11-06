@@ -8,7 +8,7 @@
     window.PI220_CAROUSEL_IMAGES = [
 
 
-
+        'https://i.ibb.co/JFycGvfD/SELINA-BY-PROF-DSC-JESSE-JESSEN.png',
         'https://i.ibb.co/67HBs3TV/THE-DIRECTORATE.png',
         'https://i.ibb.co/QhZW5Bc/PROF-DSC-JESSE-JESSEN.png',
         'https://i.ibb.co/1tgpP2BS/TAKE-ME-THERE.png',
