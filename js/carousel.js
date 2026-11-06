@@ -10,6 +10,7 @@
 
 
         'https://i.ibb.co/JwzM2pDN/PARALLEL-I-NEWS.png',
+        'https://i.ibb.co/N2xqX2Mc/PARALLEL-I-NEWS.png',
         'https://i.ibb.co/60wchCcc/PI220.jpg',
         'https://i.ibb.co/wNq4Vg6g/2226-NOW-2026.png',
         'https://i.ibb.co/JFycGvfD/SELINA-BY-PROF-DSC-JESSE-JESSEN.png',
