@@ -7,7 +7,7 @@
 
     window.PI220_CAROUSEL_IMAGES = [
 
-
+        'https://i.ibb.co/x8mvWnVN/PROF-DSC.jpg2',
         'https://i.ibb.co/N6LtfL50/MARINA-PORTS.png',
         'https://i.ibb.co/N6FYrJfX/PARALLEL-INDUSTRIES-220.jpg',
         'https://i.ibb.co/rKZmhGXP/PROF-DSC.png',
