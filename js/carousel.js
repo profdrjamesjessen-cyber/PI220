@@ -9,6 +9,7 @@
 
 
         'https://i.ibb.co/84NjHmQn/THE-ARCHITECTURE-OF-AN-IDEA.png',
+        'https://i.ibb.co/Lh69qWRC/THE-ARCHITECTURE-OF-AN-IDEA.jpg',
         'https://i.ibb.co/zT6DQ5Jp/PROF-DSC-JESSE-JESSEN-SPANISH.png',
         'https://i.ibb.co/hFCCWFB9/PROF-DSC-JESSE-JESSEN-AND-PROF-DR-SENTIENT.png',
         'https://i.ibb.co/x8mvWnVN/PROF-DSC.jpg2',
