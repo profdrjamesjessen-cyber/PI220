@@ -7,6 +7,8 @@
 
     window.PI220_CAROUSEL_IMAGES = [
 
+
+        'https://i.ibb.co/KpRypDrJ/PARALLEL-INDUSTRIES-220.png',
         'https://i.ibb.co/fddtL895/WORLD-WAR-III.png',
         'https://i.ibb.co/7dkWcy8q/SITUATION-ROOM.jpg',
         'https://i.ibb.co/CpZVNyKv/TH5-RD-W6-R3-D-WAR.png',
