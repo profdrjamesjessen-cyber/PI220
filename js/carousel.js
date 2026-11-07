@@ -7,6 +7,8 @@
 
     window.PI220_CAROUSEL_IMAGES = [
 
+
+        'https://i.ibb.co/CpZVNyKv/TH5-RD-W6-R3-D-WAR.png',
         'https://i.ibb.co/W4RHRXDX/THE-ARCHITECTURE-OF-AN-IDEA.png',
         'https://i.ibb.co/84NjHmQn/THE-ARCHITECTURE-OF-AN-IDEA.png',
         'https://i.ibb.co/Lh69qWRC/THE-ARCHITECTURE-OF-AN-IDEA.jpg',
