@@ -7,6 +7,9 @@
 
     window.PI220_CAROUSEL_IMAGES = [
 
+
+
+        'https://i.ibb.co/7qyF8Mb/PROF-DSC-JESSE-JESSEN.png',
         'https://i.ibb.co/SwKjm8wL/PARALLEL-I-NEWS.png',
         'https://i.ibb.co/PZKKC3Jm/PROF-DSC-JESSE-JESSEN.png',
         'https://i.ibb.co/2149MXWS/OPERATION-KILLSTONE.png',
