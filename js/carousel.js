@@ -10,7 +10,6 @@
         'https://i.ibb.co/SwKjm8wL/PARALLEL-I-NEWS.png',
         'https://i.ibb.co/PZKKC3Jm/PROF-DSC-JESSE-JESSEN.png',
         'https://i.ibb.co/2149MXWS/OPERATION-KILLSTONE.png',
-        'https://i.ibb.co/wFrKHYGJ/PALMA-OF-MALLORCA.png',
         'https://i.ibb.co/fddtL895/WORLD-WAR-III.png',
         'https://i.ibb.co/7dkWcy8q/SITUATION-ROOM.jpg',
         'https://i.ibb.co/W4RHRXDX/THE-ARCHITECTURE-OF-AN-IDEA.png',
