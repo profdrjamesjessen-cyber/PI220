@@ -9,6 +9,7 @@
 
 
 
+        'https://i.ibb.co/Myc3jQwq/PROF-DSC-JESSEN-AND-PROF-DR-SENTIENT.png',
         'https://i.ibb.co/7qyF8Mb/PROF-DSC-JESSE-JESSEN.png',
         'https://i.ibb.co/SwKjm8wL/PARALLEL-I-NEWS.png',
         'https://i.ibb.co/PZKKC3Jm/PROF-DSC-JESSE-JESSEN.png',
