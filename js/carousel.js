@@ -13,7 +13,6 @@
         'https://i.ibb.co/wFrKHYGJ/PALMA-OF-MALLORCA.png',
         'https://i.ibb.co/fddtL895/WORLD-WAR-III.png',
         'https://i.ibb.co/7dkWcy8q/SITUATION-ROOM.jpg',
-        'https://i.ibb.co/CpZVNyKv/TH5-RD-W6-R3-D-WAR.png',
         'https://i.ibb.co/W4RHRXDX/THE-ARCHITECTURE-OF-AN-IDEA.png',
         'https://i.ibb.co/84NjHmQn/THE-ARCHITECTURE-OF-AN-IDEA.png',
         'https://i.ibb.co/Lh69qWRC/THE-ARCHITECTURE-OF-AN-IDEA.jpg',
