@@ -8,6 +8,8 @@
     window.PI220_CAROUSEL_IMAGES = [
 
 
+
+        'https://i.ibb.co/C547LSmD/PI220.png',
         'https://i.ibb.co/CpYJT8sJ/MAJOR-OPERATION.png',
         'https://i.ibb.co/Myc3jQwq/PROF-DSC-JESSEN-AND-PROF-DR-SENTIENT.png',
         'https://i.ibb.co/7qyF8Mb/PROF-DSC-JESSE-JESSEN.png',
