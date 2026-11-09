@@ -8,14 +8,11 @@
     window.PI220_CAROUSEL_IMAGES = [
 
 
-
-        'https://i.ibb.co/hFRYCRbV/THIRD-WORLD-WAR.png',
+        'https://i.ibb.co/ZpB23kMc/ONGOING-MATA-A-ESE-HIJO-DE-PUTA.png',
         'https://i.ibb.co/7JdqyyC2/PARALLEL-INDUSTRIES-220.jpg',
         'https://i.ibb.co/B5tZjQkw/MILITARY-INTERVENTION.png',
-        'https://i.ibb.co/Dfpk8LbT/THIRD-WORLD-WAR-SPECIAL-OPERATIONS.png',
         'https://i.ibb.co/KS72PK6/LETHAL-ACTION-MASSACRE.png',
         'https://i.ibb.co/PsCLV4xR/CORPORATE-ACTION-LETHAL-KILL.png',
-        'https://i.ibb.co/Q3s0vJhS/PARALLEL-INDUSTRIES-220.png',
         'https://i.ibb.co/C547LSmD/PI220.png',
         'https://i.ibb.co/CpYJT8sJ/MAJOR-OPERATION.png',
         'https://i.ibb.co/Myc3jQwq/PROF-DSC-JESSEN-AND-PROF-DR-SENTIENT.png',
