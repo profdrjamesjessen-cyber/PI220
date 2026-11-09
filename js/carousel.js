@@ -7,8 +7,8 @@
 
     window.PI220_CAROUSEL_IMAGES = [
 
-
-
+        'https://i.ibb.co/PsCLV4xR/CORPORATE-ACTION-LETHAL-KILL.png',
+        'https://i.ibb.co/Q3s0vJhS/PARALLEL-INDUSTRIES-220.png',
         'https://i.ibb.co/C547LSmD/PI220.png',
         'https://i.ibb.co/CpYJT8sJ/MAJOR-OPERATION.png',
         'https://i.ibb.co/Myc3jQwq/PROF-DSC-JESSEN-AND-PROF-DR-SENTIENT.png',
