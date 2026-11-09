@@ -8,7 +8,9 @@
     window.PI220_CAROUSEL_IMAGES = [
 
 
-        'https://i.ibb.co/ZpB23kMc/ONGOING-MATA-A-ESE-HIJO-DE-PUTA.png',
+
+       
+        'https://i.ibb.co/sv1sYYbX/PARALLEL-INDUSTRIES-220-SENTINEL-PRIVATE-PI220.png',
         'https://i.ibb.co/7JdqyyC2/PARALLEL-INDUSTRIES-220.jpg',
         'https://i.ibb.co/B5tZjQkw/MILITARY-INTERVENTION.png',
         'https://i.ibb.co/KS72PK6/LETHAL-ACTION-MASSACRE.png',
