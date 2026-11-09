@@ -10,7 +10,6 @@
 
         'https://i.ibb.co/7JdqyyC2/PARALLEL-INDUSTRIES-220.jpg',
         'https://i.ibb.co/B5tZjQkw/MILITARY-INTERVENTION.png',
-        'https://i.ibb.co/W4sHc93H/THIRD-WORLD-WAR-SPECIAL-OPERATIONS.png',
         'https://i.ibb.co/Dfpk8LbT/THIRD-WORLD-WAR-SPECIAL-OPERATIONS.png',
         'https://i.ibb.co/KS72PK6/LETHAL-ACTION-MASSACRE.png',
         'https://i.ibb.co/PsCLV4xR/CORPORATE-ACTION-LETHAL-KILL.png',
