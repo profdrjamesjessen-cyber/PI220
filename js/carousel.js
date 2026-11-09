@@ -9,8 +9,7 @@
 
 
 
-       
-        'https://i.ibb.co/sv1sYYbX/PARALLEL-INDUSTRIES-220-SENTINEL-PRIVATE-PI220.png',
+        'https://i.ibb.co/4ZpPdRcc/CHAT-APPROVED.png',
         'https://i.ibb.co/7JdqyyC2/PARALLEL-INDUSTRIES-220.jpg',
         'https://i.ibb.co/B5tZjQkw/MILITARY-INTERVENTION.png',
         'https://i.ibb.co/KS72PK6/LETHAL-ACTION-MASSACRE.png',
