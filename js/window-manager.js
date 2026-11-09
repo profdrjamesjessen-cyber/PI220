@@ -85,7 +85,7 @@ system: {
 
             '<div class="wm-status-row">' +
                 '<span class="wm-status-dot"></span>' +
-                ' SYSTEM CONTROL ACTIVE · 03 APPLICATIONS REGISTERED' +
+                ' SYSTEM CONTROL ACTIVE · 04 APPLICATIONS REGISTERED' +
             '</div>' +
         '</div>' +
 
