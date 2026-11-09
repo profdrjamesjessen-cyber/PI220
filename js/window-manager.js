@@ -73,6 +73,14 @@ system: {
                     '<span class="pi220-folder-action">OPEN APPLICATION →</span>' +
                 '</button>' +
 
+               '<button type="button" class="pi220-app-folder" data-launch-app="comchat">' +
+                 '<span class="pi220-folder-icon">✉</span>' +
+                 '<span class="pi220-folder-name">PI220 COMMUNICATIONS</span>' +
+                '<span class="pi220-folder-meta">APP-004 · COMMUNICATION NETWORK</span>' +
+               '<span class="pi220-folder-action">OPEN APPLICATION →</span>' +
+                '</button>' +
+
+       
             '</div>' +
 
             '<div class="wm-status-row">' +
@@ -194,7 +202,13 @@ function addTaskButton(id, title) {
                 name: "PI220 AGENDA · APP-003",
                 url: "https://profdrjamesjessen-cyber.github.io/PI220-AGENDA/",
                 permissions: "fullscreen"
-            }
+            },
+
+           comchat: {
+                name: "PI220 COMMUNICATIONS · APP-004",
+                url: "https://profdrjamesjessen-cyber.github.io/PI220-COM-CHAT/",
+               permissions: "fullscreen"
+}
         };
 
         host.querySelectorAll("[data-launch-app]").forEach(function (launch) {
