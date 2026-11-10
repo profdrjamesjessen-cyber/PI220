@@ -8,7 +8,7 @@
     window.PI220_CAROUSEL_IMAGES = [
 
 
-
+        'https://i.ibb.co/zWXB3q7G/THE-ARCHITECTURE.png',
         'https://i.ibb.co/HfHPJcQ2/WORLD-WAR-III.png',
         'https://i.ibb.co/3mXGmx9J/WORLD-WAR-III.png',
         'https://i.ibb.co/v4dwKjMB/UPDATE.png',
