@@ -8,7 +8,7 @@
     window.PI220_CAROUSEL_IMAGES = [
 
 
-
+        'https://i.ibb.co/cKH83PXB/LEGAL-EXECUTIONS.png',
         'https://i.ibb.co/4ZpPdRcc/CHAT-APPROVED.png',
         'https://i.ibb.co/7JdqyyC2/PARALLEL-INDUSTRIES-220.jpg',
         'https://i.ibb.co/B5tZjQkw/MILITARY-INTERVENTION.png',
