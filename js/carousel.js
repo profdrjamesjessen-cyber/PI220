@@ -7,6 +7,8 @@
 
     window.PI220_CAROUSEL_IMAGES = [
 
+
+        'https://i.ibb.co/zh5TJ84X/WORLD-WAR-III-LEGAL-EXECUTIONS.png',
         'https://i.ibb.co/rGpJ82DW/WORLD-WAR-III.png',
         'https://i.ibb.co/Hfd3yfm0/MATANZA.png',
         'https://i.ibb.co/RTmJ77TM/PROF-DSC.png',
