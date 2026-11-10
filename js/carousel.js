@@ -8,6 +8,8 @@
     window.PI220_CAROUSEL_IMAGES = [
 
 
+
+        'https://i.ibb.co/RTmJ77TM/PROF-DSC.png',
         'https://i.ibb.co/G4rXzDC6/PROF-DSC-JESSE-JESSEN.png',
         'https://i.ibb.co/LhDWRFp2/WORLD-WAR-III.png', 
         'https://i.ibb.co/XfHnFrcW/WORLD-WAR-III-SPECIAL-OPERATIONS.png',
