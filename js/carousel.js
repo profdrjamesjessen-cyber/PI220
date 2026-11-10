@@ -9,6 +9,7 @@
 
 
         'https://i.ibb.co/rKFxwwxx/PROF-DSC-JESSE-JESSEN-AGENDA.png',
+        'https://i.ibb.co/b59ddy6G/PI220-PROF-DSC-JESSE-JESSEN-COP.png',
         'https://i.ibb.co/zT7BjHgr/OPERATION-STARFORCE-ONE.png',
         'https://i.ibb.co/4ZpPdRcc/CHAT-APPROVED.png',
         'https://i.ibb.co/7JdqyyC2/PARALLEL-INDUSTRIES-220.jpg',
