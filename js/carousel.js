@@ -8,6 +8,8 @@
     window.PI220_CAROUSEL_IMAGES = [
 
 
+
+        'https://i.ibb.co/v4dwKjMB/UPDATE.png',
         'https://i.ibb.co/rKFxwwxx/PROF-DSC-JESSE-JESSEN-AGENDA.png',
         'https://i.ibb.co/b59ddy6G/PI220-PROF-DSC-JESSE-JESSEN-COP.png',
         'https://i.ibb.co/zT7BjHgr/OPERATION-STARFORCE-ONE.png',
