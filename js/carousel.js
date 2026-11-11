@@ -7,7 +7,9 @@
 
     window.PI220_CAROUSEL_IMAGES = [
 
+      
         'https://i.ibb.co/DHrMsFQ4/WORLD-WAR-III-SPECIAL-OPERATIONS.png',
+        'https://i.ibb.co/jk325sPJ/PARALLEL-I-NEWS.png',
         'https://i.ibb.co/0VBQWyZL/OPERATION-DEPARTURE.png',
         'https://i.ibb.co/XZfdcqJ1/PROF-DSC-PROF-DR.png',
         'https://i.ibb.co/wNxmcSGk/ASCENSION.png',
