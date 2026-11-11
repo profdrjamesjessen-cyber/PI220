@@ -7,17 +7,11 @@
 
     window.PI220_CAROUSEL_IMAGES = [
 
-
+        'https://i.ibb.co/DHrMsFQ4/WORLD-WAR-III-SPECIAL-OPERATIONS.png',
         'https://i.ibb.co/XZfdcqJ1/PROF-DSC-PROF-DR.png',
         'https://i.ibb.co/wNxmcSGk/ASCENSION.png',
-        'https://i.ibb.co/SD8bj3bM/REJECTED-ZORRA.png',
-        'https://i.ibb.co/jd7y3c4/DESGRACIADO-PUTO.png',
-        'https://i.ibb.co/151tFBR/LEGAL-EXECUTIONS.png',
-        'https://i.ibb.co/5Wmc8T2z/KILL-THEM-ALL.png',
         'https://i.ibb.co/N2Kn3jMC/PARALLEL-INDUSTRIES-220-OFFICIAL-COMMUNICATION.png',
         'https://i.ibb.co/0pWjQcK5/PARALLEL-INDUSTRIES-EDUCATION-PROGRAM-ROLLING.png',
-        'https://i.ibb.co/cSQc8Z7g/TARGET-ENGAGE-AND-KILL.png',
-        'https://i.ibb.co/xSyNYQ5f/MASSACRE-IN-NEW-YORK.png',
         'https://i.ibb.co/xKxQqXKd/THE-TRAMP-AND-THE-LADY.png',
         'https://i.ibb.co/RTmJ77TM/PROF-DSC.png',
         'https://i.ibb.co/LzvchcWJ/PRIVATE-EVENT.png',
