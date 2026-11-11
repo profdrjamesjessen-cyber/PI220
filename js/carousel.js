@@ -9,6 +9,7 @@
 
 
         'https://i.ibb.co/XZfdcqJ1/PROF-DSC-PROF-DR.png',
+        'https://i.ibb.co/wNxmcSGk/ASCENSION.png',
         'https://i.ibb.co/151tFBR/LEGAL-EXECUTIONS.png',
         'https://i.ibb.co/5Wmc8T2z/KILL-THEM-ALL.png',
         'https://i.ibb.co/N2Kn3jMC/PARALLEL-INDUSTRIES-220-OFFICIAL-COMMUNICATION.png',
