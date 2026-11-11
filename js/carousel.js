@@ -7,6 +7,8 @@
 
     window.PI220_CAROUSEL_IMAGES = [
 
+
+        'https://i.ibb.co/xSyNYQ5f/MASSACRE-IN-NEW-YORK.png',
         'https://i.ibb.co/xKxQqXKd/THE-TRAMP-AND-THE-LADY.png',
         'https://i.ibb.co/RTmJ77TM/PROF-DSC.png',
         'https://i.ibb.co/LzvchcWJ/PRIVATE-EVENT.png',
