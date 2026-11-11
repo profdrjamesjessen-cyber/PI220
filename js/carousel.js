@@ -7,7 +7,7 @@
 
     window.PI220_CAROUSEL_IMAGES = [
 
-
+        'https://i.ibb.co/151tFBR/LEGAL-EXECUTIONS.png',
         'https://i.ibb.co/5Wmc8T2z/KILL-THEM-ALL.png',
         'https://i.ibb.co/N2Kn3jMC/PARALLEL-INDUSTRIES-220-OFFICIAL-COMMUNICATION.png',
         'https://i.ibb.co/0pWjQcK5/PARALLEL-INDUSTRIES-EDUCATION-PROGRAM-ROLLING.png',
