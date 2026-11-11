@@ -8,6 +8,7 @@
     window.PI220_CAROUSEL_IMAGES = [
 
         'https://i.ibb.co/DHrMsFQ4/WORLD-WAR-III-SPECIAL-OPERATIONS.png',
+        'https://i.ibb.co/0VBQWyZL/OPERATION-DEPARTURE.png',
         'https://i.ibb.co/XZfdcqJ1/PROF-DSC-PROF-DR.png',
         'https://i.ibb.co/wNxmcSGk/ASCENSION.png',
         'https://i.ibb.co/N2Kn3jMC/PARALLEL-INDUSTRIES-220-OFFICIAL-COMMUNICATION.png',
