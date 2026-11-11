@@ -7,19 +7,12 @@
 
     window.PI220_CAROUSEL_IMAGES = [
 
-
-        'https://i.ibb.co/zh5TJ84X/WORLD-WAR-III-LEGAL-EXECUTIONS.png',
-        'https://i.ibb.co/rGpJ82DW/WORLD-WAR-III.png',
-        'https://i.ibb.co/Hfd3yfm0/MATANZA.png',
+        'https://i.ibb.co/xKxQqXKd/THE-TRAMP-AND-THE-LADY.png',
         'https://i.ibb.co/RTmJ77TM/PROF-DSC.png',
         'https://i.ibb.co/LzvchcWJ/PRIVATE-EVENT.png',
         'https://i.ibb.co/G4rXzDC6/PROF-DSC-JESSE-JESSEN.png',
-        'https://i.ibb.co/LhDWRFp2/WORLD-WAR-III.png', 
-        'https://i.ibb.co/XfHnFrcW/WORLD-WAR-III-SPECIAL-OPERATIONS.png',
         'https://i.ibb.co/Xf3TCydj/PROF-DSC-JESSE-JESSEN.png',
         'https://i.ibb.co/zWXB3q7G/THE-ARCHITECTURE.png',
-        'https://i.ibb.co/HfHPJcQ2/WORLD-WAR-III.png',
-        'https://i.ibb.co/3mXGmx9J/WORLD-WAR-III.png',
         'https://i.ibb.co/v4dwKjMB/UPDATE.png',
         'https://i.ibb.co/rKFxwwxx/PROF-DSC-JESSE-JESSEN-AGENDA.png',
         'https://i.ibb.co/b59ddy6G/PI220-PROF-DSC-JESSE-JESSEN-COP.png',
