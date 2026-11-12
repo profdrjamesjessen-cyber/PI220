@@ -567,8 +567,6 @@ document.addEventListener("DOMContentLoaded", function () {
     log("[SYS] LANGUAGE CONTROL READY");
     log("[SYS] AUDIO CONTROL READY");
     log("[SYS] COMMAND CONSOLE READY");
-    log("[SYS] NEW ANNOUCEMENTS IN PI220 COMMUNICATIONS");
-    log("[SYS] SIGN UP AND JOIN WHAT IS TREND IN PI220");
 
 
     /* ================================================
@@ -584,6 +582,8 @@ document.addEventListener("DOMContentLoaded", function () {
         "[SYS] INDEPENDENT RESEARCH / TECHNOLOGY / CREATIVE DEVELOPMENT",
         "[SYS] PLEASE FEEL FREE TO CONTACT US.",
         "[SYS] PI220 OPERATIVE ENVIRONMENT READY"
+        "[SYS] NEW ANNOUCEMENTS IN PI220 COMMUNICATIONS");
+        "[SYS] SIGN UP AND JOIN WHAT IS TREND IN PI220");
     ];
 
     function getPI220BrowserName() {
