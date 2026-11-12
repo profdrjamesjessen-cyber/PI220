@@ -1,4 +1,5 @@
-  /* PI220 MEDIA EXPLORER — SINGLE IMAGE CAROUSEL
+
+/* PI220 MEDIA EXPLORER — SINGLE IMAGE CAROUSEL
    Image library restored from the original PI220 carousel source.
    Add or remove direct ImgBB image URLs in PI220_CAROUSEL_IMAGES below.
 */
@@ -7,7 +8,9 @@
 
     window.PI220_CAROUSEL_IMAGES = [
 
-      
+
+
+        'https://i.ibb.co/yFh1Nh5S/GOOD-MORNING.png',
         'https://i.ibb.co/DHrMsFQ4/WORLD-WAR-III-SPECIAL-OPERATIONS.png',
         'https://i.ibb.co/jk325sPJ/PARALLEL-I-NEWS.png',
         'https://i.ibb.co/0VBQWyZL/OPERATION-DEPARTURE.png',
