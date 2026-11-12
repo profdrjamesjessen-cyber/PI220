@@ -567,6 +567,8 @@ document.addEventListener("DOMContentLoaded", function () {
     log("[SYS] LANGUAGE CONTROL READY");
     log("[SYS] AUDIO CONTROL READY");
     log("[SYS] COMMAND CONSOLE READY");
+    log("[SYS] NEW ANNOUCEMENTS IN PI220 COMMUNICATIONS");
+    log("[SYS] SIGN UP AND JOIN WHAT IS TREND IN PI220");
 
 
     /* ================================================
