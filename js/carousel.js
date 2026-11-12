@@ -8,7 +8,7 @@
 
     window.PI220_CAROUSEL_IMAGES = [
 
-
+        'https://i.ibb.co/fGFMvTtV/PROF-DR-JESSE-JESSEN-PARALLEL-INDUSTRIES-220-LEGAL-REMEDIES.png',
         'https://i.ibb.co/twz93Mh6/ONGOING.png',
         'https://i.ibb.co/yFh1Nh5S/GOOD-MORNING.png',
         'https://i.ibb.co/vxQp6Dsx/PARALLEL-INDUSTRIES-220.png',
