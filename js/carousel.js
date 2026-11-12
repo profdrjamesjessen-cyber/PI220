@@ -9,7 +9,7 @@
     window.PI220_CAROUSEL_IMAGES = [
 
 
-       
+        'https://i.ibb.co/bj7zqd5C/ONGOING.png',
         'https://i.ibb.co/yFh1Nh5S/GOOD-MORNING.png',
         'https://i.ibb.co/vxQp6Dsx/PARALLEL-INDUSTRIES-220.png',
         'https://i.ibb.co/5gKxCwgg/PARALLEL-INDUSTRIES-220.png',
