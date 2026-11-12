@@ -11,7 +11,6 @@
 
 
         'https://i.ibb.co/yFh1Nh5S/GOOD-MORNING.png',
-        'https://i.ibb.co/DHrMsFQ4/WORLD-WAR-III-SPECIAL-OPERATIONS.png',
         'https://i.ibb.co/jk325sPJ/PARALLEL-I-NEWS.png',
         'https://i.ibb.co/0VBQWyZL/OPERATION-DEPARTURE.png',
         'https://i.ibb.co/XZfdcqJ1/PROF-DSC-PROF-DR.png',
