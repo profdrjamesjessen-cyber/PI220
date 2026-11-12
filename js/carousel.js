@@ -19,7 +19,6 @@
         'https://i.ibb.co/wNxmcSGk/ASCENSION.png',
         'https://i.ibb.co/N2Kn3jMC/PARALLEL-INDUSTRIES-220-OFFICIAL-COMMUNICATION.png',
         'https://i.ibb.co/0pWjQcK5/PARALLEL-INDUSTRIES-EDUCATION-PROGRAM-ROLLING.png',
-        'https://i.ibb.co/xKxQqXKd/THE-TRAMP-AND-THE-LADY.png',
         'https://i.ibb.co/RTmJ77TM/PROF-DSC.png',
         'https://i.ibb.co/LzvchcWJ/PRIVATE-EVENT.png',
         'https://i.ibb.co/G4rXzDC6/PROF-DSC-JESSE-JESSEN.png',
