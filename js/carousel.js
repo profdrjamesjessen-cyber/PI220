@@ -8,6 +8,9 @@
 
     window.PI220_CAROUSEL_IMAGES = [
 
+
+
+        'https://i.ibb.co/p6y0bXSb/ANY-MINUTE-ANY-SECOND.jpg',
         'https://i.ibb.co/DHXCPJb0/LOS-PERROS-QUE-NO-HABLAN-DE-NADA.png',
         'https://i.ibb.co/jkDCzpBT/KILL-THEM-ALL-MASSACRE.png',
         'https://i.ibb.co/zVgPWwSY/PARALLEL-INDUSTRIES-220.png',
