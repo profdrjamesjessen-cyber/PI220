@@ -417,7 +417,7 @@ document.addEventListener("DOMContentLoaded", function () {
         systemMuted = true;
         themeAudio.src = trackSelect.value;
         themeAudio.load();
-        const isDeveloped = trackSelect.value.indexOf("THE_RESCUE_SYMPHONY") !== -1;
+        const isDeveloped = trackSelect.value.indexOf("THE RESCUE SYMPHONY") !== -1;
         trackSubtitle.textContent = isDeveloped
             ? "TRACK 02 · THE RESCUE SYMPHONY"
             : "TRACK 01 · OFFICIAL ORIGINAL THEME · EXTENDED EDITION";
@@ -485,7 +485,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (isOriginal) {
 
         // Automatically advance from Track 01 to Track 02.
-        const developedTrack = "/media/PI220_THE_RESCUE_SYMPHONY.mp3";
+        const developedTrack = "media/PI220 THE RESCUE SYMPHONY.mp3";
 
 
         trackSelect.value = developedTrack;
