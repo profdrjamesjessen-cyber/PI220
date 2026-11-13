@@ -12,6 +12,7 @@
         'https://i.ibb.co/W48VyqDc/391-MMSS-TSUNAMIS.jpg',
         'https://i.ibb.co/cXVNgd3W/ONGOING.png',
         'https://i.ibb.co/W40gVBjh/WORLD-WAR-III-DESTROY-AND-ANNIHILATE-SPAIN.png',
+        'https://i.ibb.co/h1FRYvvh/PROF-DSC.jpg',
         'https://i.ibb.co/1GkW7FLr/391-LEGAL-EXECUTIONS.jpg',
         'https://i.ibb.co/KjbzQ19b/391-MMSS.jpg',
         'https://i.ibb.co/7NLzB1R2/391.jpg',
