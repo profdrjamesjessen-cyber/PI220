@@ -423,7 +423,7 @@ document.addEventListener("DOMContentLoaded", function () {
             : "TRACK 01 · OFFICIAL ORIGINAL THEME · EXTENDED EDITION";
         audioStatus.textContent = "TRACK SELECTED · READY TO PLAY";
         log(isDeveloped
-            ? "[SYS] PI220 DEVELOPED EDITION SELECTED"
+            ? "[SYS] PI220 OFFICIAL ORIGINAL THEME SELECTED"
             : "[SYS] PI220 THE RESCUE SYMPHONY SELECTED");
         applyAudioState();
         if (wasPlaying) {
@@ -485,14 +485,14 @@ document.addEventListener("DOMContentLoaded", function () {
     if (isOriginal) {
 
         // Automatically advance from Track 01 to Track 02.
-        const developedTrack = "/media/PI220%20THE%20RESCUE%20SYMPHONY.mp3";
+        const developedTrack = "/media/PI220_THE_RESCUE_SYMPHONY.mp3";
 
 
         trackSelect.value = developedTrack;
         themeAudio.src = developedTrack;
         themeAudio.load();
 
-        trackSubtitle.textContent = "TRACK 02 · DEVELOPED EDITION";
+        trackSubtitle.textContent = "TRACK 02 · THE RESCUE SYMPHONY";
 
         // Keep playback enabled for the automatic transition.
         systemMuted = false;
