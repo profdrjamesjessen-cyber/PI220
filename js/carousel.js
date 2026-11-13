@@ -10,7 +10,7 @@
 
 
         'https://i.ibb.co/xtZDvDq5/EMAIL-ONLY.png',
-        'https://i.ibb.co/WNbdWDsT/MASSACRE.png',
+        'https://i.ibb.co/Sp67KC7/MASSACRE.png',
         'https://i.ibb.co/fYJzM6zf/ONGOING.png',
         'https://i.ibb.co/Pzbp0Trq/DISGUSTING.png',
         'https://i.ibb.co/VWH3DVqg/ONGOING.png',
