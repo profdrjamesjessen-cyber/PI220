@@ -9,7 +9,7 @@
     window.PI220_CAROUSEL_IMAGES = [
 
         'https://i.ibb.co/GQFZBgn1/KILL-THE-KING.png',
-        'https://i.ibb.co/tpLPwF0k/USA-KILL-THEM-ALL.png',
+        'https://i.ibb.co/C5ckQMbG/THIRD-WORLD-WAR.png',
         'https://i.ibb.co/W48VyqDc/391-MMSS-TSUNAMIS.jpg',
         'https://i.ibb.co/cXVNgd3W/ONGOING.png',
         'https://i.ibb.co/W40gVBjh/WORLD-WAR-III-DESTROY-AND-ANNIHILATE-SPAIN.png',
