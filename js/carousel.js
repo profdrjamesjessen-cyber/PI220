@@ -9,7 +9,7 @@
     window.PI220_CAROUSEL_IMAGES = [
 
 
-
+        'https://i.ibb.co/jkDCzpBT/KILL-THEM-ALL-MASSACRE.png',
         'https://i.ibb.co/zVgPWwSY/PARALLEL-INDUSTRIES-220.png',
         'https://i.ibb.co/pBL4QYsj/PROF-DSC-JESSE-JESSEN.png',
         'https://i.ibb.co/m7PwCgZ/ONGOING.png',
