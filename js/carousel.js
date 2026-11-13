@@ -9,6 +9,8 @@
     window.PI220_CAROUSEL_IMAGES = [
 
 
+
+        'https://i.ibb.co/60Z4tMSD/LEGAL-ACTION-LETHAL-ACTION.png',
         'https://i.ibb.co/4ZFQ6rLG/WORLD-WAR-III-LEGAL-EXECUTIONS.png',
         'https://i.ibb.co/p6y0bXSb/ANY-MINUTE-ANY-SECOND.jpg',
         'https://i.ibb.co/DHXCPJb0/LOS-PERROS-QUE-NO-HABLAN-DE-NADA.png',
