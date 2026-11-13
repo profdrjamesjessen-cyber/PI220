@@ -10,8 +10,7 @@
 
 
 
-        'https://i.ibb.co/Xfq2Vrsn/MASSACRE.png',
-        'https://i.ibb.co/fzk2Rsqs/MATANZA.png',
+        'https://i.ibb.co/zVgPWwSY/PARALLEL-INDUSTRIES-220.png',
         'https://i.ibb.co/pBL4QYsj/PROF-DSC-JESSE-JESSEN.png',
         'https://i.ibb.co/m7PwCgZ/ONGOING.png',
         'https://i.ibb.co/fGFMvTtV/PROF-DR-JESSE-JESSEN-PARALLEL-INDUSTRIES-220-LEGAL-REMEDIES.png',
