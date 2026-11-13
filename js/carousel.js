@@ -9,6 +9,8 @@
     window.PI220_CAROUSEL_IMAGES = [
 
 
+
+        'https://i.ibb.co/mCCQGVhP/MASSACRE.jpg',
         'https://i.ibb.co/xtZDvDq5/EMAIL-ONLY.png',
         'https://i.ibb.co/Sp67KC7/MASSACRE.png',
         'https://i.ibb.co/fYJzM6zf/ONGOING.png',
