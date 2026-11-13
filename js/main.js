@@ -417,7 +417,7 @@ document.addEventListener("DOMContentLoaded", function () {
         systemMuted = true;
         themeAudio.src = trackSelect.value;
         themeAudio.load();
-        const isDeveloped = trackSelect.value.indexOf("Developed_Edition") !== -1;
+        const isDeveloped = trackSelect.value.indexOf("THE_RESCUE_SYMPHONY") !== -1;
         trackSubtitle.textContent = isDeveloped
             ? "TRACK 02 · THE RESCUE SYMPHONY"
             : "TRACK 01 · OFFICIAL ORIGINAL THEME · EXTENDED EDITION";
