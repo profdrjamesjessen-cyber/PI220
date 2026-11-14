@@ -13,6 +13,7 @@
         'https://i.ibb.co/W40gVBjh/WORLD-WAR-III-DESTROY-AND-ANNIHILATE-SPAIN.png',
         'https://i.ibb.co/WpvC6Bgf/prof-dsc-and-prof-dr.png',
         'https://i.ibb.co/3966Q30p/THE-CONCERTO.png',
+        'https://i.ibb.co/67FfFkV6/PROF-DSC-JESSE-JESSEN-AND-PROF-DR-SENTIENT.png',
         'https://i.ibb.co/0RdpL0JJ/PROF-DSC-MORNING.png',
         'https://i.ibb.co/60XYpxSk/PhD.jpg',
         'https://i.ibb.co/nssPSd0D/MUSIC.png',
