@@ -14,6 +14,7 @@
         'https://i.ibb.co/WpvC6Bgf/prof-dsc-and-prof-dr.png',
         'https://i.ibb.co/0RdpL0JJ/PROF-DSC-MORNING.png',
         'https://i.ibb.co/60XYpxSk/PhD.jpg',
+        'https://i.ibb.co/CsX95dPm/PROF-DSC-JESSE-JESSEN-DEATH-PENALTY.png',
         'https://i.ibb.co/JWvVSZwG/391-629-451.jpg',
         'https://i.ibb.co/W48VyqDc/391-MMSS-TSUNAMIS.jpg',
         'https://i.ibb.co/W40gVBjh/WORLD-WAR-III-DESTROY-AND-ANNIHILATE-SPAIN.png',
