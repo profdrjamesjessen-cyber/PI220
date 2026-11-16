@@ -11,10 +11,7 @@
 
       
         'https://i.ibb.co/W40gVBjh/WORLD-WAR-III-DESTROY-AND-ANNIHILATE-SPAIN.png',
-        'https://i.ibb.co/DHRmFYr9/DEPARTURE.png',
-        'https://i.ibb.co/xt8Bqxjm/PARALLEL-INDUSTRIES-220.png',
-        'https://i.ibb.co/SDw5Rfmy/WORLD-WAR-III-LEGAL-EXECUTIONS.png',
-        'https://i.ibb.co/LDx24d5P/NUCLEAR-WAR.png',  
+        'https://raw.githubusercontent.com/profdrjamesjessen-cyber/PI220/87c9872cd5f35ca079889687ab5a581af55516bf/media/KILL%20THEM%20ALL.png',
         'https://i.ibb.co/B2C9Mm6P/THE-ACADEMY.png',
         'https://i.ibb.co/LDx24d5P/NUCLEAR-WAR.png',
         'https://i.ibb.co/dsTNdHP4/PARALLEL-INDUSTRIES-220.png',
