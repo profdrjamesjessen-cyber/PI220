@@ -12,6 +12,7 @@
       
         'https://i.ibb.co/W40gVBjh/WORLD-WAR-III-DESTROY-AND-ANNIHILATE-SPAIN.png',
         'https://i.ibb.co/SDw5Rfmy/WORLD-WAR-III-LEGAL-EXECUTIONS.png',
+        'https://i.ibb.co/MkNYFBFh/MASSACRE.png',
         'https://i.ibb.co/LDx24d5P/NUCLEAR-WAR.png',  
         'https://i.ibb.co/B2C9Mm6P/THE-ACADEMY.png',
         'https://i.ibb.co/LDx24d5P/NUCLEAR-WAR.png',
