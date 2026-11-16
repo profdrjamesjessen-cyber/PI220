@@ -11,6 +11,7 @@
 
       
         'https://i.ibb.co/W40gVBjh/WORLD-WAR-III-DESTROY-AND-ANNIHILATE-SPAIN.png',
+        'https://raw.githubusercontent.com/profdrjamesjessen-cyber/PI220/b067e1d0ee79d8bba10216e4ceed6786d8404a88/media/ABORTED%20PLAGUE%20PUTAS.png',
         'https://raw.githubusercontent.com/profdrjamesjessen-cyber/PI220/87c9872cd5f35ca079889687ab5a581af55516bf/media/KILL%20THEM%20ALL.png',
         'https://i.ibb.co/B2C9Mm6P/THE-ACADEMY.png',
         'https://i.ibb.co/LDx24d5P/NUCLEAR-WAR.png',
