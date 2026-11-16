@@ -11,7 +11,7 @@
 
       
         'https://i.ibb.co/W40gVBjh/WORLD-WAR-III-DESTROY-AND-ANNIHILATE-SPAIN.png',
-        'https://i.ibb.co/CLxMrSG/WORLD-WAR-III.png',
+        'https://i.ibb.co/B2C9Mm6P/THE-ACADEMY.png',
         'https://i.ibb.co/LDx24d5P/NUCLEAR-WAR.png',
         'https://i.ibb.co/dsTNdHP4/PARALLEL-INDUSTRIES-220.png',
         'https://i.ibb.co/LhdBBTG0/PROF-2226-DSC.png',
@@ -39,7 +39,6 @@
         'https://i.ibb.co/Pzbp0Trq/DISGUSTING.png',
         'https://i.ibb.co/VWH3DVqg/ONGOING.png',
         'https://i.ibb.co/60Z4tMSD/LEGAL-ACTION-LETHAL-ACTION.png',
-        'https://i.ibb.co/4ZFQ6rLG/WORLD-WAR-III-LEGAL-EXECUTIONS.png',
         'https://i.ibb.co/p6y0bXSb/ANY-MINUTE-ANY-SECOND.jpg',
         'https://i.ibb.co/DHXCPJb0/LOS-PERROS-QUE-NO-HABLAN-DE-NADA.png',
         'https://i.ibb.co/jkDCzpBT/KILL-THEM-ALL-MASSACRE.png',
