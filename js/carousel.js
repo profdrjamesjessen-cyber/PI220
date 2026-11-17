@@ -11,6 +11,7 @@
 
       
         'https://i.ibb.co/W40gVBjh/WORLD-WAR-III-DESTROY-AND-ANNIHILATE-SPAIN.png',
+        'https://i.ibb.co/MkhwC64X/PROF-DSC.png',
         'https://i.ibb.co/wFxcbwdK/ONGOING.png',
         'https://i.ibb.co/Q3KhVkDP/DEPARTURE.png',
         'https://i.ibb.co/B2C9Mm6P/THE-ACADEMY.png',
