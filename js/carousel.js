@@ -12,11 +12,8 @@
       
         'https://i.ibb.co/W40gVBjh/WORLD-WAR-III-DESTROY-AND-ANNIHILATE-SPAIN.png',
         'https://i.ibb.co/MkhwC64X/PROF-DSC.png',
-        'https://i.ibb.co/wFxcbwdK/ONGOING.png',
         'https://i.ibb.co/Q3KhVkDP/DEPARTURE.png',
         'https://i.ibb.co/B2C9Mm6P/THE-ACADEMY.png',
-        'https://i.ibb.co/LDx24d5P/NUCLEAR-WAR.png',
-        'https://i.ibb.co/dsTNdHP4/PARALLEL-INDUSTRIES-220.png',
         'https://i.ibb.co/LhdBBTG0/PROF-2226-DSC.png',
         'https://i.ibb.co/DPxM3ZF2/THE-ACADEMY.png',
         'https://i.ibb.co/LhkgjWtF/PARALLEL-INDUSTRIES-220.png',
