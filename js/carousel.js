@@ -11,6 +11,7 @@
 
       
         'https://i.ibb.co/W40gVBjh/WORLD-WAR-III-DESTROY-AND-ANNIHILATE-SPAIN.png',
+        'https://i.ibb.co/RGJvwtRY/PI220-PROF-DSC-AND-PROF-DR-SENTIENT.png',
         'https://i.ibb.co/5xsLQmz8/PARALLEL-INEWS.png',
         'https://i.ibb.co/1t2wcB3t/MEMORANDUM.png',
         'https://i.ibb.co/xKZ6NRFP/PI220-PARALLEL-INDUSTRIES-220.png',
