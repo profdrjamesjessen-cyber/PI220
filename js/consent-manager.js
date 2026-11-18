@@ -1,8 +1,7 @@
 
 /* PI220 — CONSENT MANAGER
-   REVISION 001
-   Independent visitor consent management.
-   GA4 is deliberately NOT loaded by this module.
+   REVISION 002
+   Basic Consent Mode + Google Analytics 4
 */
 
 (function () {
@@ -11,10 +10,12 @@
     var STORAGE_KEY = "pi220Consent";
     var CONSENT_VERSION = 1;
 
+    var GA4_ID = "G-S1S7HJCFWV";
+
     var memoryConsent = null;
     var overlay = null;
     var statusText = null;
-    var isOpen = false;
+    var gaScriptLoaded = false;
 
     function readConsent() {
         try {
@@ -38,6 +39,84 @@
         return memoryConsent;
     }
 
+    function activateAnalytics() {
+        if (gaScriptLoaded) {
+            window.gtag("consent", "update", {
+                analytics_storage: "granted",
+                ad_storage: "denied",
+                ad_user_data: "denied",
+                ad_personalization: "denied"
+            });
+
+            window.gtag("event", "page_view");
+            return;
+        }
+
+        window.dataLayer = window.dataLayer || [];
+
+        window.gtag = window.gtag || function () {
+            window.dataLayer.push(arguments);
+        };
+
+        // Default: deny all optional Google storage.
+        window.gtag("consent", "default", {
+            analytics_storage: "denied",
+            ad_storage: "denied",
+            ad_user_data: "denied",
+            ad_personalization: "denied"
+        });
+
+        window.gtag("js", new Date());
+
+        // Only analytics is permitted by this PI220 choice.
+        window.gtag("consent", "update", {
+            analytics_storage: "granted",
+            ad_storage: "denied",
+            ad_user_data: "denied",
+            ad_personalization: "denied"
+        });
+
+        // Prevent automatic page views before our explicit event.
+        window.gtag("config", GA4_ID, {
+            send_page_view: false
+        });
+
+        var script = document.createElement("script");
+        script.async = true;
+        script.src =
+            "https://www.googletagmanager.com/gtag/js?id=" + GA4_ID;
+
+        script.onload = function () {
+            console.info("[PI220 GA4] GOOGLE ANALYTICS LOADED");
+        };
+
+        script.onerror = function () {
+            console.error("[PI220 GA4] Failed to load Google Analytics.");
+        };
+
+        gaScriptLoaded = true;
+        document.head.appendChild(script);
+
+        window.gtag("event", "page_view");
+
+        console.info("[PI220 GA4] ANALYTICS ACTIVATED BY CONSENT");
+    }
+
+    function deactivateAnalytics() {
+        if (!gaScriptLoaded || typeof window.gtag !== "function") {
+            return;
+        }
+
+        window.gtag("consent", "update", {
+            analytics_storage: "denied",
+            ad_storage: "denied",
+            ad_user_data: "denied",
+            ad_personalization: "denied"
+        });
+
+        console.info("[PI220 GA4] ANALYTICS CONSENT WITHDRAWN");
+    }
+
     function saveConsent(analyticsAllowed) {
         var consent = {
             version: CONSENT_VERSION,
@@ -45,13 +124,36 @@
             updatedAt: new Date().toISOString()
         };
 
-        memoryConsent = consent;
+        var persisted = false;
 
         try {
-            localStorage.setItem(STORAGE_KEY, JSON.stringify(consent));
+            var serialized = JSON.stringify(consent);
+
+            localStorage.setItem(STORAGE_KEY, serialized);
+
+            persisted =
+                localStorage.getItem(STORAGE_KEY) === serialized;
         } catch (error) {
             console.warn("[PI220 CONSENT] Could not persist consent.");
         }
+
+        // Never activate analytics without persistent acceptance.
+        if (analyticsAllowed && !persisted) {
+            if (statusText) {
+                statusText.textContent =
+                    "Your choice could not be saved. Please enable browser storage and try again. Analytics remains disabled.";
+            }
+
+            console.error(
+                "[PI220 CONSENT] Acceptance not saved. Analytics blocked."
+            );
+
+            return;
+        }
+
+        // A rejection remains effective for this session even if
+        // browser storage is unavailable.
+        memoryConsent = consent;
 
         window.dispatchEvent(
             new CustomEvent("pi220:consentchange", {
@@ -62,11 +164,17 @@
             })
         );
 
+        if (analyticsAllowed) {
+            activateAnalytics();
+        } else {
+            deactivateAnalytics();
+        }
+
         closePanel();
 
         console.info(
-            "[PI220 CONSENT] Visitor choice saved:",
-            analyticsAllowed ? "ANALYTICS ACCEPTED" : "OPTIONAL ANALYTICS REJECTED"
+            "[PI220 CONSENT] Visitor choice:",
+            analyticsAllowed ? "ANALYTICS ACCEPTED" : "ANALYTICS REJECTED"
         );
     }
 
@@ -83,7 +191,6 @@
         if (!overlay) return;
 
         overlay.hidden = true;
-        isOpen = false;
     }
 
     function openSettings() {
@@ -107,7 +214,6 @@
         }
 
         overlay.hidden = false;
-        isOpen = true;
 
         var rejectButton = overlay.querySelector(
             '[data-consent-action="reject"]'
@@ -123,6 +229,7 @@
         overlay.hidden = true;
 
         var panel = createElement("section", "pi220-consent-panel");
+
         panel.setAttribute("role", "dialog");
         panel.setAttribute("aria-modal", "true");
         panel.setAttribute("aria-labelledby", "pi220ConsentTitle");
@@ -215,6 +322,8 @@
 
         if (!consent) {
             openSettings();
+        } else if (consent.analytics === true) {
+            activateAnalytics();
         }
 
         console.info("[PI220 CONSENT] CONSENT MANAGER READY");
