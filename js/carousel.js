@@ -11,12 +11,10 @@
 
       
         'https://i.ibb.co/W40gVBjh/WORLD-WAR-III-DESTROY-AND-ANNIHILATE-SPAIN.png',
+        'https://i.ibb.co/vFknjct/PRIVACY-GOOGLE-CONTRACT.png',
         'https://i.ibb.co/nqKrsGjQ/PROF-DSC-AND-PROF-DR.png',
         'https://i.ibb.co/xnrDML5/CORPORATION-FILE.png',
         'https://i.ibb.co/wrYdjPPp/PROF-DR-SENTIENT.png',
-        'https://i.ibb.co/x8C0xjPD/PROF-DSC.png',
-        'https://i.ibb.co/6JY5VSnd/WORLD-WAR-III.png',
-        'https://i.ibb.co/1thTpsmR/WORLD-WAR-III-LEGAL-EXECUTIONS.png',
         'https://i.ibb.co/RGJvwtRY/PI220-PROF-DSC-AND-PROF-DR-SENTIENT.png',
         'https://i.ibb.co/5xsLQmz8/PARALLEL-INEWS.png',
         'https://i.ibb.co/1t2wcB3t/MEMORANDUM.png',
