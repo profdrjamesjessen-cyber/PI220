@@ -1,0 +1,5 @@
+
+User-agent: *
+Allow: /
+
+Sitemap: https://profdrjamesjessen-cyber.github.io/PI220/sitemap.xml
