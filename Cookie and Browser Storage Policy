@@ -1,0 +1,100 @@
+# PI220 — Cookie and Browser Storage Policy
+
+**Parallel Industries 220**  
+**Website:** https://profdrjamesjessen-cyber.github.io/PI220/  
+**Responsible individual:** Prof D.Sc Jesse Jessen  
+**Last updated:** 18 November 2026
+
+## 1. Purpose
+
+This policy explains how the PI220 website uses cookies and similar browser technologies.
+
+PI220 aims to distinguish essential website functionality from optional analytics and to give visitors meaningful control over optional tracking.
+
+## 2. Current browser storage
+
+The current website code uses browser local storage to remember the visitor's sound-volume preference.
+
+| Storage item | Technology | Purpose |
+|---|---|---|
+| `pi220SoundVolume` | Browser local storage | Remembers the visitor's preferred sound volume |
+
+This item is not a conventional HTTP cookie. It is stored in the visitor's browser and is used for a website preference.
+
+The current implementation does not establish that this item transmits information to PI220 or to an analytics provider.
+
+## 3. Analytics cookies — planned, not currently active
+
+PI220 has created a Google Analytics 4 property for possible future website measurement.
+
+**Measurement ID:** G-S1S7HJCFWV
+
+At the date of this policy, GA4 has not been installed in the website code supplied for review. Therefore, this policy does not claim that GA4 cookies are currently being placed.
+
+If PI220 activates GA4, it will first implement an appropriate consent mechanism and update this policy with the actual cookies, identifiers, purposes, providers and retention periods used by the deployed configuration.
+
+## 4. Consent choices
+
+Before optional analytics technologies are activated, visitors must be offered clear choices.
+
+The intended consent interface will provide:
+
+- **Accept analytics:** permits optional analytics processing.
+- **Reject optional:** keeps optional analytics disabled.
+- **Manage preferences:** allows the visitor to review their choices.
+
+Accept and Reject will be presented with equal visibility and at the same level.
+
+No optional analytics will be activated merely because a visitor continues browsing, remains inactive or closes the banner.
+
+## 5. Google Analytics and consent
+
+If GA4 is introduced, PI220 intends to use Google Consent Mode in its Basic implementation.
+
+Under Google's description of Basic Consent Mode, Google tags remain blocked until the visitor grants the relevant consent. If the visitor refuses, the tags remain blocked and no data is transmitted to Google by those blocked tags.
+
+Google documentation:  
+https://support.google.com/analytics/answer/10000067
+
+The exact configuration will be verified before activation.
+
+## 6. Changing or withdrawing consent
+
+Visitors must be able to change or withdraw their optional analytics consent after their initial choice.
+
+PI220 intends to provide an accessible privacy or cookie-preferences control on the website so visitors can reopen their settings.
+
+Withdrawing consent will stop future optional analytics processing through the website's consent mechanism. It does not automatically erase information already lawfully processed by a provider; applicable deletion rights can be exercised separately.
+
+## 7. Browser controls
+
+Visitors can also configure their browser to block or delete cookies and clear local storage.
+
+Please note that clearing browser storage may remove saved website preferences, including the sound-volume setting.
+
+Browser controls are supplementary and do not replace the website's own consent interface for optional technologies.
+
+## 8. Third-party information
+
+If third-party technologies are activated, their providers may process information under their own terms and privacy policies.
+
+PI220 will identify the relevant providers and technologies in this policy when they are actually deployed.
+
+## 9. Policy updates
+
+This policy will be revised whenever PI220 introduces or changes cookies, analytics services, browser storage or consent mechanisms.
+
+The published version should always describe the website's actual deployed configuration, rather than planned or hypothetical functionality.
+
+## 10. Contact
+
+For questions about this policy or the use of browser technologies, contact:
+
+**Prof D.Sc Jesse Jessen**  
+**Parallel Industries 220 (PI220)**
+
+CONOCEAPROFDSC@PROTON.ME  
+PI220.391.PROFDSCXYZ.2026@PROTON.ME
+
+**Parallel Industries 220**  
+Mission • unity • future • unstoppable
