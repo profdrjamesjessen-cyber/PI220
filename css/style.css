@@ -1147,6 +1147,110 @@ button {
 .pi220-corp-signoff-sub { color:#8fa4b8; font-size:10px; margin:7px 0 0; }
 @media(max-width:620px) { .pi220-corp-leaders { grid-template-columns:1fr; } .pi220-corporation { padding:12px; } }
 
+
+
+/* ================================================
+   PI220 REVISION 011 — LEGAL DOCUMENT ACCESS
+   ================================================ */
+
+.pi220-corp-legal-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.pi220-corp-legal-button {
+    position: relative;
+    min-height: 42px;
+    padding: 0 17px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    color: #dff4ff;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(31, 76, 103, 0.55),
+            rgba(10, 25, 40, 0.92)
+        );
+
+    border: 1px solid rgba(85, 188, 232, 0.42);
+    border-left: 2px solid #65c8e8;
+
+    font-family: inherit;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.15px;
+    text-align: left;
+
+    cursor: pointer;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.045),
+        0 5px 15px rgba(0, 0, 0, 0.16);
+
+    transition:
+        color 160ms ease,
+        background 160ms ease,
+        border-color 160ms ease,
+        box-shadow 160ms ease,
+        transform 160ms ease;
+}
+
+.pi220-corp-legal-button::before {
+    content: "›";
+    color: #b99a61;
+    font-size: 16px;
+    line-height: 1;
+}
+
+.pi220-corp-legal-button:hover {
+    color: #ffffff;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(43, 112, 145, 0.62),
+            rgba(16, 39, 59, 0.96)
+        );
+    border-color: #83d5f5;
+    box-shadow:
+        0 0 0 1px rgba(85, 188, 232, 0.08),
+        0 7px 20px rgba(0, 0, 0, 0.25);
+    transform: translateY(-1px);
+}
+
+.pi220-corp-legal-button:active {
+    transform: translateY(0);
+}
+
+.pi220-corp-legal-button:focus-visible {
+    outline: 1px solid #83d5f5;
+    outline-offset: 3px;
+}
+
+@media (max-width: 560px) {
+    .pi220-corp-legal-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .pi220-corp-legal-button {
+        width: 100%;
+        min-height: 44px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .pi220-corp-legal-button {
+        transition: none;
+    }
+}
+
+
 /* ================================================
    PI220 REVISION 010 — HELP & SUPPORT
    ================================================ */
