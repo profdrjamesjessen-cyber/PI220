@@ -1,10 +1,20 @@
-/* PI220 REVISION 009 — CORPORATION PRESENTATION */
+
+/* PI220 REVISION 010 — CORPORATION PRESENTATION
+   Adds permanent access to visitor cookie settings.
+*/
+
 (function () {
     "use strict";
 
     var sections = [
-        { title: "CORPORATE IDENTITY", body: "Parallel Industries 220 (PI220) is an independent organisation dedicated to research, technological exploration, engineering concepts, innovative systems architecture and creative development.\n\nOperating across multiple areas of intellectual and technical investigation, PI220 seeks to establish an environment where imagination, scientific curiosity, structured research and technological ambition converge.\n\nThe corporation's identity is founded upon independence, multidisciplinary collaboration, continuous development and the pursuit of ambitious ideas." },
-        { title: "MISSION & VISION", body: "The mission of Parallel Industries 220 is to explore possibilities beyond conventional boundaries, develop original concepts and architectures, and encourage the advancement of knowledge through research, experimentation, education and creative engineering.\n\nPI220 aims to establish a collaborative environment in which technological innovation, independent thinking, educational development and long-term research can coexist.\n\nIts vision is to build an enduring platform for intellectual exploration and technological creation, bringing together people, ideas and disciplines under a common commitment to progress." }
+        {
+            title: "CORPORATE IDENTITY",
+            body: "Parallel Industries 220 (PI220) is an independent organisation dedicated to research, technological exploration, engineering concepts, innovative systems architecture and creative development.\n\nOperating across multiple areas of intellectual and technical investigation, PI220 seeks to establish an environment where imagination, scientific curiosity, structured research and technological ambition converge.\n\nThe corporation's identity is founded upon independence, multidisciplinary collaboration, continuous development and the pursuit of ambitious ideas."
+        },
+        {
+            title: "MISSION & VISION",
+            body: "The mission of Parallel Industries 220 is to explore possibilities beyond conventional boundaries, develop original concepts and architectures, and encourage the advancement of knowledge through research, experimentation, education and creative engineering.\n\nPI220 aims to establish a collaborative environment in which technological innovation, independent thinking, educational development and long-term research can coexist.\n\nIts vision is to build an enduring platform for intellectual exploration and technological creation, bringing together people, ideas and disciplines under a common commitment to progress."
+        }
     ];
 
     var leaders = [
@@ -27,8 +37,11 @@
 
     function mount(host) {
         if (!host) return;
+
         host.textContent = "";
+
         var root = element("div", "pi220-corporation");
+
         var hero = element("section", "pi220-corp-hero");
         hero.appendChild(element("div", "pi220-corp-kicker", "CORPORATE DIRECTORATE / PI220"));
         hero.appendChild(element("h2", "", "PARALLEL INDUSTRIES 220"));
@@ -46,7 +59,9 @@
 
         var leadership = element("section", "pi220-corp-section");
         leadership.appendChild(element("h3", "", "3 / CORPORATE LEADERSHIP & EXECUTIVE DIRECTORATE"));
+
         var grid = element("div", "pi220-corp-leaders");
+
         leaders.forEach(function (leader, index) {
             var card = element("article", "pi220-corp-leader");
             card.appendChild(element("div", "pi220-corp-number", "DIRECTORATE MEMBER " + String(index + 1).padStart(2, "0")));
@@ -55,14 +70,22 @@
             card.appendChild(element("p", "", leader[2]));
             grid.appendChild(card);
         });
+
         leadership.appendChild(grid);
         root.appendChild(leadership);
 
         var commitment = element("section", "pi220-corp-section");
         commitment.appendChild(element("h3", "", "4 / CORPORATE COMMITMENT"));
-        commitment.appendChild(element("p", "pi220-corp-copy", "Parallel Industries 220 recognises that meaningful progress requires vision, discipline, responsibility and collaboration.\n\nIts leadership is committed to developing an independent environment for research, education, engineering concepts and creative exploration, while maintaining a long-term perspective on innovation and institutional development."));
-    
-        commitment.appendChild(element("p", "pi220-corp-signoff-sub", "Independent thought. Collective ambition. Continuous development."));
+        commitment.appendChild(element(
+            "p",
+            "pi220-corp-copy",
+            "Parallel Industries 220 recognises that meaningful progress requires vision, discipline, responsibility and collaboration.\n\nIts leadership is committed to developing an independent environment for research, education, engineering concepts and creative exploration, while maintaining a long-term perspective on innovation and institutional development."
+        ));
+        commitment.appendChild(element(
+            "p",
+            "pi220-corp-signoff-sub",
+            "Independent thought. Collective ambition. Continuous development."
+        ));
         root.appendChild(commitment);
 
         // LEGAL DOCUMENT ACCESS
@@ -72,7 +95,7 @@
         legal.appendChild(element(
             "p",
             "pi220-corp-copy",
-            "Access the official PI220 privacy and browser storage policies."
+            "Access the official PI220 privacy policy, browser storage policy and visitor consent settings."
         ));
 
         var legalActions = element("div", "pi220-corp-legal-actions");
@@ -105,14 +128,34 @@
             }
         });
 
+        var settingsButton = element(
+            "button",
+            "pi220-corp-legal-button",
+            "COOKIE SETTINGS"
+        );
+        settingsButton.type = "button";
+        settingsButton.addEventListener("click", function () {
+            if (
+                window.PI220ConsentManager &&
+                typeof window.PI220ConsentManager.openSettings === "function"
+            ) {
+                window.PI220ConsentManager.openSettings();
+            } else {
+                console.error("[PI220 CONSENT] Consent manager unavailable.");
+            }
+        });
+
         legalActions.appendChild(privacyButton);
         legalActions.appendChild(cookiesButton);
+        legalActions.appendChild(settingsButton);
+
         legal.appendChild(legalActions);
         root.appendChild(legal);
 
         host.appendChild(root);
-
     }
 
-    window.PI220CorporationRenderer = { mount: mount };
+    window.PI220CorporationRenderer = {
+        mount: mount
+    };
 })();
