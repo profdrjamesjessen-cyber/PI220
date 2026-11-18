@@ -1,4 +1,4 @@
-/* PI220 REVISION 004 — WINDOW MANAGER
+/* PI220 REVISION 005 — WINDOW MANAGER
    Standalone add-on. Keeps Revision 003 main.js untouched.
 */
 document.addEventListener("DOMContentLoaded", function () {
@@ -39,6 +39,19 @@ document.addEventListener("DOMContentLoaded", function () {
             title: "HELP & SUPPORT", code: "SUP-01 / CONTACT",
             content: '<div id="pi220HelpHost" class="pi220-help-host"></div>'
         },
+
+       
+        privacy: {
+            title: "PRIVACY POLICY",
+            code: "LEGAL-01 / DATA PROTECTION",
+            content: '<div id="pi220PrivacyHost" class="pi220-legal-host"></div>'
+        },
+        cookies: {
+            title: "COOKIE POLICY",
+            code: "LEGAL-02 / BROWSER TECHNOLOGIES",
+            content: '<div id="pi220CookiesHost" class="pi220-legal-host"></div>'
+        },
+
         
 system: {
     title: "SYSTEM CONTROL",
@@ -287,12 +300,28 @@ function addTaskButton(id, title) {
         if (id === "projects" && window.PI220ProjectsRenderer) {
             window.PI220ProjectsRenderer.mount(win.querySelector("#pi220ProjectsHost"));
         }
+       
         if (id === "corporation" && window.PI220CorporationRenderer) {
             window.PI220CorporationRenderer.mount(win.querySelector("#pi220CorporationHost"));
         }
+           
+            if (id === "privacy" && window.PI220LegalDocumentsRenderer) {
+            window.PI220LegalDocumentsRenderer.mountPrivacy(
+                win.querySelector("#pi220PrivacyHost")
+            );
+        }
+
+        if (id === "cookies" && window.PI220LegalDocumentsRenderer) {
+            window.PI220LegalDocumentsRenderer.mountCookies(
+                win.querySelector("#pi220CookiesHost")
+            );
+        }
+       
         if (id === "help" && window.PI220HelpRenderer) {
             window.PI220HelpRenderer.mount(win.querySelector("#pi220HelpHost"));
+           
         }
+       
         if (id === "system") {
             mountSystemControl(win.querySelector(".pi220-system-control"));
         }
