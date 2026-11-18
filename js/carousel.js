@@ -27,8 +27,6 @@
         'https://i.ibb.co/DPxM3ZF2/THE-ACADEMY.png',
         'https://i.ibb.co/LhkgjWtF/PARALLEL-INDUSTRIES-220.png',
         'https://i.ibb.co/8Dv4N5Rj/PROF-DSC-AND-PROF-DR.png',
-        'https://i.ibb.co/PGgHLTCV/GERMANY.png',
-        'https://i.ibb.co/93GKfM7V/OVER.png',
         'https://i.ibb.co/WpvC6Bgf/prof-dsc-and-prof-dr.png',
         'https://i.ibb.co/3966Q30p/THE-CONCERTO.png',
         'https://i.ibb.co/67FfFkV6/PROF-DSC-JESSE-JESSEN-AND-PROF-DR-SENTIENT.png',
