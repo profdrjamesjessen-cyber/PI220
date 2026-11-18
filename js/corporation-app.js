@@ -61,10 +61,57 @@
         var commitment = element("section", "pi220-corp-section");
         commitment.appendChild(element("h3", "", "4 / CORPORATE COMMITMENT"));
         commitment.appendChild(element("p", "pi220-corp-copy", "Parallel Industries 220 recognises that meaningful progress requires vision, discipline, responsibility and collaboration.\n\nIts leadership is committed to developing an independent environment for research, education, engineering concepts and creative exploration, while maintaining a long-term perspective on innovation and institutional development."));
-        commitment.appendChild(element("div", "pi220-corp-signoff", "PARALLEL INDUSTRIES 220"));
+    
         commitment.appendChild(element("p", "pi220-corp-signoff-sub", "Independent thought. Collective ambition. Continuous development."));
         root.appendChild(commitment);
+
+        // LEGAL DOCUMENT ACCESS
+        var legal = element("section", "pi220-corp-section");
+        legal.appendChild(element("h3", "", "5 / LEGAL DOCUMENTATION"));
+
+        legal.appendChild(element(
+            "p",
+            "pi220-corp-copy",
+            "Access the official PI220 privacy and browser storage policies."
+        ));
+
+        var legalActions = element("div", "pi220-corp-legal-actions");
+
+        var privacyButton = element(
+            "button",
+            "pi220-corp-legal-button",
+            "PRIVACY POLICY"
+        );
+        privacyButton.type = "button";
+        privacyButton.addEventListener("click", function () {
+            if (window.PI220WindowManager) {
+                window.PI220WindowManager.open("privacy");
+            } else {
+                console.error("[PI220] Window Manager unavailable.");
+            }
+        });
+
+        var cookiesButton = element(
+            "button",
+            "pi220-corp-legal-button",
+            "COOKIE & BROWSER STORAGE POLICY"
+        );
+        cookiesButton.type = "button";
+        cookiesButton.addEventListener("click", function () {
+            if (window.PI220WindowManager) {
+                window.PI220WindowManager.open("cookies");
+            } else {
+                console.error("[PI220] Window Manager unavailable.");
+            }
+        });
+
+        legalActions.appendChild(privacyButton);
+        legalActions.appendChild(cookiesButton);
+        legal.appendChild(legalActions);
+        root.appendChild(legal);
+
         host.appendChild(root);
+
     }
 
     window.PI220CorporationRenderer = { mount: mount };
