@@ -46,7 +46,7 @@
                 Operating as Parallel Industries 220 (PI220)<br>
                 Email: <a href="mailto:CONOCEAPROFDSC@PROTON.ME">CONOCEAPROFDSC@PROTON.ME</a><br>
                 Additional contact: <a href="mailto:PI220.391.PROFDSCXYZ.2026@PROTON.ME">PI220.391.PROFDSCXYZ.2026@PROTON.ME</a><br>
-                Postal address: [INSERT POSTAL ADDRESS BEFORE PUBLICATION]</p>
+                Postal address: 301 Austin, TX 78701, Estados Unidos - Vía Roma, 1, 07012 Palma, Illes Balears.</p>
                 <p>PI220 is identified here as an operating organisation/project under Prof D.Sc Jesse Jessen, not as a separately incorporated legal entity.</p>
             </section>
 
