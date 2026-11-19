@@ -11,15 +11,11 @@
 
       
         'https://i.ibb.co/W40gVBjh/WORLD-WAR-III-DESTROY-AND-ANNIHILATE-SPAIN.png',
-        'https://i.ibb.co/0jMqmnf6/PI220-NETWORK.png',
-        'https://i.ibb.co/zh0H7K3L/PARALLEL-INDUSTRIES-220.png',
-        'https://i.ibb.co/NnFbbD7T/391-NODE-SUBMARINE.png',
         'https://i.ibb.co/vpS3Jk4/STARFORCE.png',
+        'https://i.ibb.co/g1Shr3L/https-profdrjamesjessen-cyber-github-io-PI220.png',
         'https://i.ibb.co/ZpN8nQ6G/PROF-DSC-JESSE-JESSEN.png',
-        'https://i.ibb.co/vFknjct/PRIVACY-GOOGLE-CONTRACT.png',
+        'https://i.ibb.co/6RjtLM05/DSC.png',
         'https://i.ibb.co/nqKrsGjQ/PROF-DSC-AND-PROF-DR.png',
-        'https://i.ibb.co/4nzwfdQ1/LIVE-NODES.png',
-        'https://i.ibb.co/xnrDML5/CORPORATION-FILE.png',
         'https://i.ibb.co/wrYdjPPp/PROF-DR-SENTIENT.png',
         'https://i.ibb.co/RGJvwtRY/PI220-PROF-DSC-AND-PROF-DR-SENTIENT.png',
         'https://i.ibb.co/5xsLQmz8/PARALLEL-INEWS.png',
