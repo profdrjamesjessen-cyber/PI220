@@ -98,7 +98,7 @@ system: {
 
             '<div class="wm-status-row">' +
                 '<span class="wm-status-dot"></span>' +
-                ' SYSTEM CONTROL ACTIVE · 04 APPLICATIONS REGISTERED' +
+                ' SYSTEM CONTROL ACTIVE · 05 APPLICATIONS REGISTERED' +
             '</div>' +
         '</div>' +
 
@@ -222,6 +222,13 @@ function addTaskButton(id, title) {
                 url: "https://profdrjamesjessen-cyber.github.io/PI220-COM-CHAT/",
                permissions: "fullscreen"
 }
+        },
+
+            network: {
+                name: "PI220 NETWORK · APP-005",
+                url: "https://profdrjamesjessen-cyber.github.io/PI220-NETWORK/",
+                permissions: "fullscreen"
+            }
         };
 
         host.querySelectorAll("[data-launch-app]").forEach(function (launch) {
