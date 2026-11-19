@@ -11,6 +11,7 @@
 
       
         'https://i.ibb.co/W40gVBjh/WORLD-WAR-III-DESTROY-AND-ANNIHILATE-SPAIN.png',
+        'https://i.ibb.co/zh0H7K3L/PARALLEL-INDUSTRIES-220.png',
         'https://i.ibb.co/vpS3Jk4/STARFORCE.png',
         'https://i.ibb.co/ZpN8nQ6G/PROF-DSC-JESSE-JESSEN.png',
         'https://i.ibb.co/vFknjct/PRIVACY-GOOGLE-CONTRACT.png',
