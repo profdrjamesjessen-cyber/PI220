@@ -11,6 +11,7 @@
 
       
         'https://i.ibb.co/W40gVBjh/WORLD-WAR-III-DESTROY-AND-ANNIHILATE-SPAIN.png',
+        'https://i.ibb.co/pvbFBdBD/INEWS.png',
         'https://i.ibb.co/G37tdbc6/EMAIL.png',
         'https://raw.githubusercontent.com/profdrjamesjessen-cyber/PI220/690b7668523010aa6f9054f07025239d7bd258f9/media/HEARTBEAT.png',
         'https://raw.githubusercontent.com/profdrjamesjessen-cyber/PI220/761c6812e6fb677f26aa0bd24609d461c8df439f/media/THE%20FUTURE.png',
