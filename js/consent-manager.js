@@ -1,7 +1,9 @@
 
 /* PI220 — CONSENT MANAGER
-   REVISION 002
-   Basic Consent Mode + Google Analytics 4
+   REVISION 003
+   Google Consent Mode + GTM Integration
+   GTM: GTM-TJQ5N8S6
+   GA4: G-S1S7HJCFWV
 */
 
 (function () {
@@ -10,12 +12,17 @@
     var STORAGE_KEY = "pi220Consent";
     var CONSENT_VERSION = 1;
 
-    var GA4_ID = "G-S1S7HJCFWV";
-
     var memoryConsent = null;
     var overlay = null;
     var statusText = null;
-    var gaScriptLoaded = false;
+
+    function ensureGoogleQueue() {
+        window.dataLayer = window.dataLayer || [];
+
+        window.gtag = window.gtag || function () {
+            window.dataLayer.push(arguments);
+        };
+    }
 
     function readConsent() {
         try {
@@ -39,82 +46,36 @@
         return memoryConsent;
     }
 
-    function activateAnalytics() {
-        if (gaScriptLoaded) {
-            window.gtag("consent", "update", {
-                analytics_storage: "granted",
-                ad_storage: "denied",
-                ad_user_data: "denied",
-                ad_personalization: "denied"
-            });
+    function updateGoogleConsent(analyticsAllowed) {
+        ensureGoogleQueue();
 
-            window.gtag("event", "page_view");
-            return;
-        }
-
-        window.dataLayer = window.dataLayer || [];
-
-        window.gtag = window.gtag || function () {
-            window.dataLayer.push(arguments);
-        };
-
-        // Default: deny all optional Google storage.
-        window.gtag("consent", "default", {
-            analytics_storage: "denied",
-            ad_storage: "denied",
-            ad_user_data: "denied",
-            ad_personalization: "denied"
-        });
-
-        window.gtag("js", new Date());
-
-        // Only analytics is permitted by this PI220 choice.
         window.gtag("consent", "update", {
-            analytics_storage: "granted",
+            analytics_storage: analyticsAllowed ? "granted" : "denied",
             ad_storage: "denied",
             ad_user_data: "denied",
             ad_personalization: "denied"
         });
-
-        // Prevent automatic page views before our explicit event.
-        window.gtag("config", GA4_ID, {
-            send_page_view: false
-        });
-
-        var script = document.createElement("script");
-        script.async = true;
-        script.src =
-            "https://www.googletagmanager.com/gtag/js?id=" + GA4_ID;
-
-        script.onload = function () {
-            console.info("[PI220 GA4] GOOGLE ANALYTICS LOADED");
-        };
-
-        script.onerror = function () {
-            console.error("[PI220 GA4] Failed to load Google Analytics.");
-        };
-
-        gaScriptLoaded = true;
-        document.head.appendChild(script);
-
-        window.gtag("event", "page_view");
-
-        console.info("[PI220 GA4] ANALYTICS ACTIVATED BY CONSENT");
     }
 
-    function deactivateAnalytics() {
-        if (!gaScriptLoaded || typeof window.gtag !== "function") {
-            return;
-        }
+    function notifyConsentChange(analyticsAllowed, updatedAt) {
+        ensureGoogleQueue();
 
-        window.gtag("consent", "update", {
-            analytics_storage: "denied",
-            ad_storage: "denied",
-            ad_user_data: "denied",
-            ad_personalization: "denied"
+        // GTM Custom Event: dataLayer integration.
+        window.dataLayer.push({
+            event: "pi220:consentchange",
+            analytics: analyticsAllowed,
+            updatedAt: updatedAt
         });
 
-        console.info("[PI220 GA4] ANALYTICS CONSENT WITHDRAWN");
+        // Preserve the existing PI220 browser event.
+        window.dispatchEvent(
+            new CustomEvent("pi220:consentchange", {
+                detail: {
+                    analytics: analyticsAllowed,
+                    updatedAt: updatedAt
+                }
+            })
+        );
     }
 
     function saveConsent(analyticsAllowed) {
@@ -151,24 +112,18 @@
             return;
         }
 
-        // A rejection remains effective for this session even if
-        // browser storage is unavailable.
+        // Rejection remains effective for this session
+        // even when browser storage is unavailable.
         memoryConsent = consent;
 
-        window.dispatchEvent(
-            new CustomEvent("pi220:consentchange", {
-                detail: {
-                    analytics: analyticsAllowed,
-                    updatedAt: consent.updatedAt
-                }
-            })
-        );
+        // Update Google consent BEFORE notifying GTM.
+        updateGoogleConsent(analyticsAllowed);
 
-        if (analyticsAllowed) {
-            activateAnalytics();
-        } else {
-            deactivateAnalytics();
-        }
+        // Notify GTM and existing PI220 browser listeners.
+        notifyConsentChange(
+            analyticsAllowed,
+            consent.updatedAt
+        );
 
         closePanel();
 
@@ -323,7 +278,17 @@
         if (!consent) {
             openSettings();
         } else if (consent.analytics === true) {
-            activateAnalytics();
+            // Restore previously accepted consent.
+            updateGoogleConsent(true);
+
+            // Notify GTM so its Google tag can initialize.
+            notifyConsentChange(
+                true,
+                consent.updatedAt
+            );
+        } else {
+            // Keep previously rejected consent denied.
+            updateGoogleConsent(false);
         }
 
         console.info("[PI220 CONSENT] CONSENT MANAGER READY");
