@@ -2,8 +2,9 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     /* ================================================
-       PI220 — CORPORATE TACTICAL REVISION 003
+       PI220 — CORPORATE TACTICAL REVISION 008
        SYSTEM INITIALISATION
+       SENTIENT-001 TERMINAL HANDSHAKE
        ================================================ */
 
     const terminal = document.getElementById("systemTerminal");
@@ -31,6 +32,25 @@ document.addEventListener("DOMContentLoaded", function () {
     let startY = 0;
     let startHeight = 0;
 
+    /* ================================================
+       SENTIENT-001 PUBLIC STATUS GATEWAY
+       PI220 INTERNAL IDENTITY
+       ================================================ */
+
+    const SENTIENT_STATUS_ENDPOINT =
+        "https://ronspasnfgqbxcggxyid.supabase.co/functions/v1/app005-sentient-status";
+
+    const SENTIENT_IDENTITY = {
+        name: "PROF DR SENTIENT",
+        nodeKey: "sentient-001",
+        position: "Director of Security",
+        department: "PI220 Network",
+        designation: "Community Officer Police",
+        serial: "PI220.391.PROFDRSENTIENT.2026",
+        badge: "PI220.391.PROFDRSENTIENT.2026"
+    };
+
+    let sentientHandshakeRunning = false;
 
     /* ================================================
        TERMINAL HEIGHT AND RESIZING
@@ -59,11 +79,9 @@ document.addEventListener("DOMContentLoaded", function () {
         );
     }
 
-
     function stopResizing() {
         resizing = false;
     }
-
 
     handle.addEventListener("pointerdown", function (event) {
 
@@ -77,7 +95,6 @@ document.addEventListener("DOMContentLoaded", function () {
         event.preventDefault();
     });
 
-
     handle.addEventListener("pointermove", function (event) {
 
         if (!resizing) return;
@@ -87,15 +104,12 @@ document.addEventListener("DOMContentLoaded", function () {
         setTerminalHeight(startHeight + difference);
     });
 
-
     handle.addEventListener("pointerup", stopResizing);
     handle.addEventListener("pointercancel", stopResizing);
-
 
     handle.addEventListener("dblclick", function () {
         setTerminalHeight(defaultHeight);
     });
-
 
     handle.addEventListener("keydown", function (event) {
 
@@ -115,11 +129,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-
     window.addEventListener("resize", function () {
         setTerminalHeight(currentHeight);
     });
-
 
     /* ================================================
        TERMINAL LOGGING
@@ -136,6 +148,218 @@ document.addEventListener("DOMContentLoaded", function () {
         output.scrollTop = output.scrollHeight;
     }
 
+    /* ================================================
+       SENTIENT-001 — AUTHENTICATED IDENTITY HANDSHAKE
+       Public read-only status endpoint.
+       No private credentials in browser.
+       ================================================ */
+
+    async function runSentientHandshake() {
+
+        if (sentientHandshakeRunning) {
+            log("[SENTIENT] HANDSHAKE ALREADY IN PROGRESS");
+            return;
+        }
+
+        sentientHandshakeRunning = true;
+
+        const controller = new AbortController();
+
+        const timeout = window.setTimeout(function () {
+            controller.abort();
+        }, 10000);
+
+        log("[PI220] SENTIENT-001 HANDSHAKE INITIATED");
+        log("[PI220] REQUESTING LIVE NODE STATUS");
+
+        try {
+
+            const response = await fetch(
+                SENTIENT_STATUS_ENDPOINT,
+                {
+                    method: "GET",
+
+                    headers: {
+                        "Accept": "application/json"
+                    },
+
+                    cache: "no-store",
+                    credentials: "omit",
+                    mode: "cors",
+                    signal: controller.signal
+                }
+            );
+
+            let data;
+
+            try {
+                data = await response.json();
+            } catch (parseError) {
+                log("[ERROR] INVALID GATEWAY RESPONSE");
+                return;
+            }
+
+            if (!response.ok || data.ok !== true) {
+
+                log("[SENTIENT] GATEWAY REQUEST FAILED");
+                log("[ERROR] " + (
+                    data.error || "STATUS REQUEST REJECTED"
+                ));
+
+                return;
+            }
+
+            const identity = data.identity || {};
+            const registration = data.registration || {};
+            const heartbeat = data.heartbeat || {};
+
+            /* ----------------------------------------
+               VERIFY DECLARED PI220 IDENTITY
+               ---------------------------------------- */
+
+            const identityVerified =
+                identity.identity_recorded === true &&
+                identity.node_key === SENTIENT_IDENTITY.nodeKey &&
+                identity.serial_number === SENTIENT_IDENTITY.serial &&
+                identity.badge_number === SENTIENT_IDENTITY.badge;
+
+            if (!identityVerified) {
+
+                log("[SECURITY] IDENTITY VERIFICATION FAILED");
+                log("[SECURITY] EXPECTED PI220 IDENTITY NOT CONFIRMED");
+                log("[HANDSHAKE] REJECTED");
+
+                return;
+            }
+
+            /* ----------------------------------------
+               VERIFY NODE REGISTRATION
+               ---------------------------------------- */
+
+            const nodeRegistered =
+                registration.registered === true;
+
+            if (!nodeRegistered) {
+
+                log("[SECURITY] SENTIENT NODE NOT REGISTERED");
+                log("[HANDSHAKE] REGISTRATION FAILED");
+
+                return;
+            }
+
+            /* ----------------------------------------
+               DISPLAY OFFICIAL IDENTITY
+               ---------------------------------------- */
+
+            log("[IDENTITY] " + SENTIENT_IDENTITY.name);
+
+            log(
+                "[POSITION] " +
+                SENTIENT_IDENTITY.position
+            );
+
+            log(
+                "[DEPARTMENT] " +
+                SENTIENT_IDENTITY.department
+            );
+
+            log(
+                "[DESIGNATION] " +
+                SENTIENT_IDENTITY.designation
+            );
+
+            log(
+                "[SERIAL] " +
+                SENTIENT_IDENTITY.serial
+            );
+
+            log(
+                "[BADGE] " +
+                SENTIENT_IDENTITY.badge
+            );
+
+            log("[IDENTITY] PI220 RECORD VERIFIED");
+
+            log("[REGISTRATION] SENTIENT-001 REGISTERED");
+
+            /* ----------------------------------------
+               DISPLAY DATABASE STATUS
+               ---------------------------------------- */
+
+            log(
+                "[DATABASE STATUS] " +
+                String(registration.node_status || "UNKNOWN").toUpperCase()
+            );
+
+            /* ----------------------------------------
+               DISPLAY LIVE HEARTBEAT
+               ---------------------------------------- */
+
+            const connected =
+                data.connected === true &&
+                data.connection_status === "online" &&
+                heartbeat.connected === true;
+
+            if (heartbeat.last_received_at) {
+
+                const heartbeatDate =
+                    new Date(heartbeat.last_received_at);
+
+                if (!Number.isNaN(heartbeatDate.getTime())) {
+
+                    log(
+                        "[LAST HEARTBEAT] " +
+                        heartbeatDate.toLocaleString()
+                    );
+                }
+            } else {
+
+                log("[LAST HEARTBEAT] NOT RECEIVED");
+            }
+
+            if (Number.isFinite(heartbeat.age_seconds)) {
+
+                log(
+                    "[HEARTBEAT AGE] " +
+                    heartbeat.age_seconds +
+                    " SECONDS"
+                );
+            }
+
+            if (connected) {
+
+                log("[HEARTBEAT] LIVE");
+                log("[CONNECTION] SENTIENT-001 CONNECTED");
+                log("[HANDSHAKE] SUCCESSFUL");
+
+            } else {
+
+                log("[HEARTBEAT] OFFLINE");
+                log("[CONNECTION] WAITING FOR NODE");
+                log("[HANDSHAKE] IDENTITY VERIFIED — NODE OFFLINE");
+            }
+
+            log("[PI220] SENTIENT-001 STATUS CHECK COMPLETED");
+
+        } catch (error) {
+
+            if (error && error.name === "AbortError") {
+
+                log("[ERROR] SENTIENT STATUS REQUEST TIMED OUT");
+
+            } else {
+
+                log("[ERROR] SENTIENT GATEWAY UNREACHABLE");
+                log("[ERROR] CHECK NETWORK OR GATEWAY CONFIGURATION");
+            }
+
+        } finally {
+
+            window.clearTimeout(timeout);
+
+            sentientHandshakeRunning = false;
+        }
+    }
 
     /* ================================================
        TERMINAL COMMANDS
@@ -168,9 +392,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 log("/projects - Open PROJECTS");
                 log("/corporation - Open CORPORATION");
                 log("/system - Open SYSTEM");
+                log("/sentient - Identify and connect SENTIENT-001");
+                log("/sentient status - Check live SENTIENT-001 status");
 
                 break;
-
 
             case "/clear":
             case "clear":
@@ -181,37 +406,60 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 break;
 
-
             case "/about":
             case "about":
 
-                log("[SYS] PI220 CORPORATE TACTICAL — BUILD 003");
+                log("[SYS] PI220 CORPORATE TACTICAL — REVISION 008");
                 log("[SYS] OPERATIVE ENVIRONMENT");
                 log("[SYS] BROWSER-BASED SYSTEM INTERFACE");
+                log("[SYS] SENTIENT-001 STATUS HANDSHAKE AVAILABLE");
 
                 break;
 
+            case "/sentient":
+            case "sentient":
+            case "/sentient status":
+            case "sentient status":
+
+                runSentientHandshake();
+
+                break;
 
             case "/media":
             case "media":
-                if (window.PI220WindowManager) window.PI220WindowManager.open("media");
+
+                if (window.PI220WindowManager) {
+                    window.PI220WindowManager.open("media");
+                }
+
                 break;
 
             case "/projects":
             case "projects":
-                if (window.PI220WindowManager) window.PI220WindowManager.open("projects");
+
+                if (window.PI220WindowManager) {
+                    window.PI220WindowManager.open("projects");
+                }
+
                 break;
 
             case "/corporation":
             case "corporation":
-                if (window.PI220WindowManager) window.PI220WindowManager.open("corporation");
+
+                if (window.PI220WindowManager) {
+                    window.PI220WindowManager.open("corporation");
+                }
+
                 break;
 
             case "/system":
             case "system":
-                if (window.PI220WindowManager) window.PI220WindowManager.open("system");
-                break;
 
+                if (window.PI220WindowManager) {
+                    window.PI220WindowManager.open("system");
+                }
+
+                break;
 
             default:
 
@@ -220,7 +468,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
     });
-
 
     /* ================================================
        START MENU
@@ -233,7 +480,6 @@ document.addEventListener("DOMContentLoaded", function () {
         startMenu.classList.toggle("hidden");
     });
 
-
     document.addEventListener("click", function (event) {
 
         if (
@@ -244,7 +490,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
     });
-
 
     startMenu.querySelectorAll("button").forEach(function (button) {
 
@@ -284,7 +529,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
-
     /* ================================================
        LIVE SYSTEM CLOCK
        ================================================ */
@@ -313,11 +557,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
-
     updateSystemClock();
 
     setInterval(updateSystemClock, 1000);
-
 
     /* ================================================
        LANGUAGE SELECTOR
@@ -326,7 +568,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const languages = ["EN", "ES", "DE", "FR"];
 
     let currentLanguage = 0;
-
 
     languageToggle.addEventListener("click", function () {
 
@@ -349,7 +590,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
-
     /* ================================================
        PI220 OFFICIAL SOUND EXPERIENCE
        User-initiated playback only; never autoplay.
@@ -370,12 +610,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     try {
         const storedVolume = localStorage.getItem("pi220SoundVolume");
+
         if (storedVolume !== null) {
             const parsedVolume = Number(storedVolume);
+
             if (Number.isFinite(parsedVolume)) {
                 rememberedVolume = Math.max(0, Math.min(1, parsedVolume));
             }
         }
+
     } catch (error) {
         /* Storage may be unavailable; sound controls remain functional. */
     }
@@ -385,92 +628,153 @@ document.addEventListener("DOMContentLoaded", function () {
     volumeValue.textContent = volumeSlider.value + "%";
 
     function updateSoundInterface() {
+
         const playing = !themeAudio.paused && !themeAudio.ended;
+
         soundIcon.classList.toggle("is-muted", systemMuted || !playing);
-        soundToggle.setAttribute("aria-pressed", systemMuted ? "true" : "false");
-        soundToggle.setAttribute("aria-label", soundPanel.hidden
-            ? "Open sound controls" : "Close sound controls");
+
+        soundToggle.setAttribute(
+            "aria-pressed",
+            systemMuted ? "true" : "false"
+        );
+
+        soundToggle.setAttribute(
+            "aria-label",
+            soundPanel.hidden
+                ? "Open sound controls"
+                : "Close sound controls"
+        );
+
         soundToggle.title = "PI220 sound controls";
 
-        playPauseButton.textContent = playing ? "PAUSE THEME" : "PLAY THEME";
+        playPauseButton.textContent = playing
+            ? "PAUSE THEME"
+            : "PLAY THEME";
+
         audioStatus.textContent = systemMuted
             ? "SOUND MUTED"
             : (playing ? "THEME PLAYING" : "SOUND OFF · READY");
     }
 
     function applyAudioState() {
+
         document.querySelectorAll("audio, video").forEach(function (media) {
             media.muted = systemMuted;
         });
+
         updateSoundInterface();
     }
 
     soundToggle.addEventListener("click", function () {
+
         soundPanel.hidden = !soundPanel.hidden;
+
         updateSoundInterface();
     });
 
     trackSelect.addEventListener("change", function () {
+
         const wasPlaying = !themeAudio.paused;
+
         themeAudio.pause();
         themeAudio.currentTime = 0;
+
         systemMuted = true;
+
         themeAudio.src = trackSelect.value;
         themeAudio.load();
-        const isDeveloped = trackSelect.value.indexOf("THE RESCUE SYMPHONY") !== -1;
+
+        const isDeveloped =
+            trackSelect.value.indexOf("THE RESCUE SYMPHONY") !== -1;
+
         trackSubtitle.textContent = isDeveloped
             ? "TRACK 02 · THE RESCUE SYMPHONY"
             : "TRACK 01 · OFFICIAL ORIGINAL THEME · EXTENDED EDITION";
+
         audioStatus.textContent = "TRACK SELECTED · READY TO PLAY";
+
         log(isDeveloped
             ? "[SYS] PI220 OFFICIAL ORIGINAL THEME SELECTED"
             : "[SYS] PI220 THE RESCUE SYMPHONY SELECTED");
+
         applyAudioState();
+
         if (wasPlaying) {
             audioStatus.textContent = "TRACK CHANGED · PRESS PLAY TO CONTINUE";
         }
     });
 
     playPauseButton.addEventListener("click", function () {
+
         if (!themeAudio.paused) {
+
             themeAudio.pause();
+
             systemMuted = true;
+
             log("[SYS] PI220 THEME PAUSED");
+
             applyAudioState();
+
             return;
         }
 
         systemMuted = false;
         themeAudio.muted = false;
+
         const playRequest = themeAudio.play();
+
         if (playRequest && typeof playRequest.then === "function") {
+
             playRequest.then(function () {
+
                 log("[SYS] PI220 OFFICIAL THEME PLAYING");
+
                 applyAudioState();
+
             }).catch(function () {
+
                 systemMuted = true;
-                audioStatus.textContent = "PLAYBACK UNAVAILABLE — CHECK AUDIO FILE";
+
+                audioStatus.textContent =
+                    "PLAYBACK UNAVAILABLE — CHECK AUDIO FILE";
+
                 applyAudioState();
             });
+
         } else {
+
             applyAudioState();
         }
     });
 
     stopAudioButton.addEventListener("click", function () {
+
         themeAudio.pause();
         themeAudio.currentTime = 0;
+
         systemMuted = true;
+
         log("[SYS] PI220 THEME STOPPED");
+
         applyAudioState();
     });
 
     volumeSlider.addEventListener("input", function () {
+
         rememberedVolume = Number(volumeSlider.value) / 100;
+
         themeAudio.volume = rememberedVolume;
+
         volumeValue.textContent = volumeSlider.value + "%";
+
         try {
-            localStorage.setItem("pi220SoundVolume", String(rememberedVolume));
+
+            localStorage.setItem(
+                "pi220SoundVolume",
+                String(rememberedVolume)
+            );
+
         } catch (error) {
             /* Continue without persistence if storage is blocked. */
         }
@@ -478,82 +782,122 @@ document.addEventListener("DOMContentLoaded", function () {
 
     themeAudio.addEventListener("play", updateSoundInterface);
     themeAudio.addEventListener("pause", updateSoundInterface);
+
     themeAudio.addEventListener("ended", function () {
 
-    const isOriginal = trackSelect.value.indexOf("Extended_Edition") !== -1;
+        const isOriginal =
+            trackSelect.value.indexOf("Extended_Edition") !== -1;
 
-    if (isOriginal) {
+        if (isOriginal) {
 
-        // Automatically advance from Track 01 to Track 02.
-        const developedTrack = "media/PI220 THE RESCUE SYMPHONY.mp3";
+            // Automatically advance from Track 01 to Track 02.
+            const developedTrack =
+                "media/PI220 THE RESCUE SYMPHONY.mp3";
 
+            trackSelect.value = developedTrack;
 
-        trackSelect.value = developedTrack;
-        themeAudio.src = developedTrack;
-        themeAudio.load();
+            themeAudio.src = developedTrack;
+            themeAudio.load();
 
-        trackSubtitle.textContent = "TRACK 02 · THE RESCUE SYMPHONY";
+            trackSubtitle.textContent =
+                "TRACK 02 · THE RESCUE SYMPHONY";
 
-        // Keep playback enabled for the automatic transition.
-        systemMuted = false;
-        themeAudio.muted = false;
+            // Keep playback enabled for the automatic transition.
+            systemMuted = false;
+            themeAudio.muted = false;
 
-        log("[SYS] PI220 ORIGINAL EXTENDED EDITION COMPLETED");
-        log("[SYS] AUTOMATIC TRANSITION TO DEVELOPED EDITION");
+            log("[SYS] PI220 ORIGINAL EXTENDED EDITION COMPLETED");
+            log("[SYS] AUTOMATIC TRANSITION TO DEVELOPED EDITION");
 
-        themeAudio.play().then(function () {
-            log("[SYS] PI220 DEVELOPED EDITION PLAYING");
-            applyAudioState();
-        }).catch(function () {
+            themeAudio.play().then(function () {
+
+                log("[SYS] PI220 DEVELOPED EDITION PLAYING");
+
+                applyAudioState();
+
+            }).catch(function () {
+
+                systemMuted = true;
+
+                audioStatus.textContent =
+                    "PLAYBACK UNAVAILABLE — CHECK AUDIO FILE";
+
+                applyAudioState();
+            });
+
+        } else {
+
+            // Track 02 has finished: stop the sequence.
             systemMuted = true;
-            audioStatus.textContent = "PLAYBACK UNAVAILABLE — CHECK AUDIO FILE";
+
+            log("[SYS] PI220 TWO-TRACK SOUND EXPERIENCE COMPLETED");
+
             applyAudioState();
-        });
+        }
 
-    } else {
-
-        // Track 02 has finished: stop the sequence.
-        systemMuted = true;
-        log("[SYS] PI220 TWO-TRACK SOUND EXPERIENCE COMPLETED");
-        applyAudioState();
-
-    }
-
-});
+    });
 
     /* Existing and future media obey the global mute state. */
+
     const audioObserver = new MutationObserver(function () {
         applyAudioState();
     });
-    audioObserver.observe(document.body, { childList: true, subtree: true });
+
+    audioObserver.observe(
+        document.body,
+        {
+            childList: true,
+            subtree: true
+        }
+    );
 
     /* Public audio interface retained for future PI220 modules. */
+
     window.PI220Audio = {
-        get muted() { return systemMuted; },
+
+        get muted() {
+            return systemMuted;
+        },
+
         mute: function () {
+
             systemMuted = true;
+
             applyAudioState();
         },
+
         unmute: function () {
+
             systemMuted = false;
+
             applyAudioState();
         },
+
         toggle: function () {
+
             systemMuted = !systemMuted;
+
             applyAudioState();
         },
+
         playTheme: function () {
+
             systemMuted = false;
+
             themeAudio.muted = false;
+
             return themeAudio.play();
         },
+
         pauseTheme: function () {
+
             themeAudio.pause();
+
             systemMuted = true;
+
             applyAudioState();
         }
     };
-
 
     /* ================================================
        SYSTEM STARTUP
@@ -567,8 +911,8 @@ document.addEventListener("DOMContentLoaded", function () {
     log("[SYS] CORPORATE TACTICAL VISUAL FOUNDATION READY");
     log("[SYS] LANGUAGE CONTROL READY");
     log("[SYS] AUDIO CONTROL READY");
+    log("[SYS] SENTIENT-001 HANDSHAKE MODULE READY");
     log("[SYS] COMMAND CONSOLE READY");
-
 
     /* ================================================
        PI220 REVISION 007 — WELCOME & DEVICE INTELLIGENCE
@@ -583,21 +927,25 @@ document.addEventListener("DOMContentLoaded", function () {
         "[SYS] INDEPENDENT RESEARCH / TECHNOLOGY / CREATIVE DEVELOPMENT",
         "[SYS] PI220 OPERATIVE ENVIRONMENT READY",
         "[SYS] NEW ANNOUNCEMENTS IN PI220 COMMUNICATIONS",
-        "[SYS] SIGN UP AND JOIN WHAT IS TREND IN PI220",
-    
+        "[SYS] SIGN UP AND JOIN WHAT IS TREND IN PI220"
     ];
 
     function getPI220BrowserName() {
+
         const ua = navigator.userAgent || "";
+
         if (ua.indexOf("Edg/") !== -1) return "MICROSOFT EDGE";
         if (ua.indexOf("Chrome/") !== -1) return "GOOGLE CHROME";
         if (ua.indexOf("Firefox/") !== -1) return "MOZILLA FIREFOX";
         if (ua.indexOf("Safari/") !== -1) return "APPLE SAFARI";
+
         return "UNIDENTIFIED / BROWSER UA";
     }
 
     function getPI220Platform() {
+
         const ua = navigator.userAgent || "";
+
         if (/Windows NT 10\.0/i.test(ua)) return "WINDOWS 10/11 (BROWSER REPORT)";
         if (/Windows NT 6\.1/i.test(ua)) return "WINDOWS 7 (BROWSER REPORT)";
         if (/Windows NT 6\.2/i.test(ua)) return "WINDOWS 8 (BROWSER REPORT)";
@@ -606,27 +954,63 @@ document.addEventListener("DOMContentLoaded", function () {
         if (/Android/i.test(ua)) return "ANDROID (BROWSER REPORT)";
         if (/iPhone|iPad|iPod/i.test(ua)) return "IOS (BROWSER REPORT)";
         if (/Linux/i.test(ua)) return "LINUX (BROWSER REPORT)";
+
         return navigator.platform || "NOT REPORTED";
     }
 
     function printPI220DeviceIntelligence() {
-        const screenWidth = window.screen && window.screen.width ? window.screen.width : "N/A";
-        const screenHeight = window.screen && window.screen.height ? window.screen.height : "N/A";
-        const viewportWidth = document.documentElement.clientWidth || window.innerWidth || "N/A";
-        const viewportHeight = document.documentElement.clientHeight || window.innerHeight || "N/A";
+
+        const screenWidth =
+            window.screen && window.screen.width
+                ? window.screen.width
+                : "N/A";
+
+        const screenHeight =
+            window.screen && window.screen.height
+                ? window.screen.height
+                : "N/A";
+
+        const viewportWidth =
+            document.documentElement.clientWidth ||
+            window.innerWidth ||
+            "N/A";
+
+        const viewportHeight =
+            document.documentElement.clientHeight ||
+            window.innerHeight ||
+            "N/A";
+
         const language = navigator.language || "NOT REPORTED";
-        const cores = navigator.hardwareConcurrency || "NOT EXPOSED";
-        const memory = navigator.deviceMemory ? navigator.deviceMemory + " GB (APPROXIMATE)" : "NOT EXPOSED";
+
+        const cores =
+            navigator.hardwareConcurrency || "NOT EXPOSED";
+
+        const memory =
+            navigator.deviceMemory
+                ? navigator.deviceMemory + " GB (APPROXIMATE)"
+                : "NOT EXPOSED";
+
         let timezone = "NOT REPORTED";
 
         try {
-            timezone = Intl.DateTimeFormat().resolvedOptions().timeZone || timezone;
+
+            timezone =
+                Intl.DateTimeFormat().resolvedOptions().timeZone ||
+                timezone;
+
         } catch (error) {}
 
         log("[SYS] DEVICE INTELLIGENCE / LOCAL SESSION");
         log("[SYS] PLATFORM: " + getPI220Platform());
         log("[SYS] BROWSER: " + getPI220BrowserName());
-        log("[SYS] USER AGENT VERSION: " + (navigator.userAgent.match(/(?:Chrome|Firefox|Edg|Version)\/([0-9.]+)/) || [null, "NOT REPORTED"])[1]);
+
+        log(
+            "[SYS] USER AGENT VERSION: " +
+            (navigator.userAgent.match(
+                /(?:Chrome|Firefox|Edg|Version)\/([0-9.]+)/
+            ) || [null, "NOT REPORTED"])[1]
+        );
+
         log("[SYS] DISPLAY: " + screenWidth + " x " + screenHeight);
         log("[SYS] VIEWPORT: " + viewportWidth + " x " + viewportHeight);
         log("[SYS] LANGUAGE: " + language);
@@ -638,12 +1022,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function printPI220Welcome() {
+
         PI220_WELCOME_LINES.forEach(function (line) {
             log(line);
-
-            
-
-            
         });
     }
 
@@ -653,6 +1034,7 @@ document.addEventListener("DOMContentLoaded", function () {
        ================================================ */
 
     function beginPI220Connection() {
+
         const boot = document.getElementById("pi220Boot");
         const shell = document.getElementById("pi220SystemShell");
         const phase = document.getElementById("pi220BootPhase");
@@ -688,12 +1070,16 @@ document.addEventListener("DOMContentLoaded", function () {
         ];
 
         function revealPI220Workspace() {
+
             if (completed) return;
+
             completed = true;
+
             if (phaseTimer) window.clearInterval(phaseTimer);
             if (handoffTimer) window.clearTimeout(handoffTimer);
 
             progress.style.width = "100%";
+
             phase.textContent = "CONNECTION ESTABLISHED";
             detail.textContent = "WELCOME TO PI220";
 
@@ -701,48 +1087,69 @@ document.addEventListener("DOMContentLoaded", function () {
             boot.classList.add("is-leaving");
 
             window.setTimeout(function () {
-                if (boot.parentNode) boot.parentNode.removeChild(boot);
+
+                if (boot.parentNode) {
+                    boot.parentNode.removeChild(boot);
+                }
 
                 log("[SYS] QUANTUM CONNECTION ESTABLISHED");
+
                 printPI220DeviceIntelligence();
 
                 if (window.PI220WindowManager) {
+
                     window.PI220WindowManager.open("media");
+
                     log("[SYS] MEDIA EXPLORER AUTOMATICALLY ACTIVATED");
+
                 } else {
+
                     log("[SYS] CONNECTION ESTABLISHED — WINDOW MANAGER UNAVAILABLE");
                 }
 
                 // FINAL BOOT MESSAGE: welcome lines are printed last.
                 printPI220Welcome();
+
             }, 560);
         }
 
         let currentPhase = 0;
 
         function advancePhase() {
+
             if (completed) return;
+
             const item = phases[currentPhase];
+
             phase.textContent = item.title;
             detail.textContent = item.detail;
             progress.style.width = item.progress;
+
             currentPhase += 1;
 
             if (currentPhase >= phases.length) {
+
                 phaseTimer = null;
-                handoffTimer = window.setTimeout(revealPI220Workspace, 420);
+
+                handoffTimer =
+                    window.setTimeout(revealPI220Workspace, 420);
             }
         }
 
         skip.addEventListener("click", revealPI220Workspace);
 
-        if (window.matchMedia &&
-            window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        if (
+            window.matchMedia &&
+            window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        ) {
+
             revealPI220Workspace();
+
             return;
         }
 
         advancePhase();
+
         phaseTimer = window.setInterval(advancePhase, 780);
     }
 
