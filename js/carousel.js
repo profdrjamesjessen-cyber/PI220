@@ -12,6 +12,7 @@
       
         'https://i.ibb.co/W40gVBjh/WORLD-WAR-III-DESTROY-AND-ANNIHILATE-SPAIN.png',
         'https://i.ibb.co/xSpBLCfr/https-youtu-be-KHUHD34-Dof-M-si-s2-RIb9-Ga-IN16a-R-m.png',
+        'https://i.ibb.co/N6Q15qx0/DAILY-VALUATION.png',
         'https://raw.githubusercontent.com/profdrjamesjessen-cyber/PI220/0f49942faeee92479280094011d9d6ad52626061/media/PROF%20DSC%20JESSE%20JESSEN%20AND%20PROF%20DR%20SENTIENT.png',
         'https://i.ibb.co/pvbFBdBD/INEWS.png',
         'https://i.ibb.co/G37tdbc6/EMAIL.png',
