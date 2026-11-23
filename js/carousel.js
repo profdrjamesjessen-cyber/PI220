@@ -1,4 +1,5 @@
 
+
 /* PI220 MEDIA EXPLORER — SINGLE IMAGE CAROUSEL
    Image library restored from the original PI220 carousel source.
    Add or remove direct ImgBB image URLs in PI220_CAROUSEL_IMAGES below.
@@ -11,6 +12,7 @@
 
       
         'https://i.ibb.co/W40gVBjh/WORLD-WAR-III-DESTROY-AND-ANNIHILATE-SPAIN.png',
+        'https://raw.githubusercontent.com/profdrjamesjessen-cyber/PI220/0bca43412ef807a8e4283db359ef23f49b0d40ef/media/MASTER%20CERTIFICATE.png',
         'https://i.ibb.co/xSpBLCfr/https-youtu-be-KHUHD34-Dof-M-si-s2-RIb9-Ga-IN16a-R-m.png',
         'https://i.ibb.co/N6Q15qx0/DAILY-VALUATION.png',
         'https://raw.githubusercontent.com/profdrjamesjessen-cyber/PI220/0f49942faeee92479280094011d9d6ad52626061/media/PROF%20DSC%20JESSE%20JESSEN%20AND%20PROF%20DR%20SENTIENT.png',
