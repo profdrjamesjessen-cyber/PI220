@@ -12,6 +12,8 @@
 
       
         'https://i.ibb.co/W40gVBjh/WORLD-WAR-III-DESTROY-AND-ANNIHILATE-SPAIN.png',
+        'https://i.ibb.co/7d7tfy1J/PARALLEL-INDUSTRIES-220',
+        'https://i.ibb.co/vvZBp8Jh/PROF-DSC.png', 
         'https://raw.githubusercontent.com/profdrjamesjessen-cyber/PI220/9bb9a6ea2c1c941990e30f1207846d374b7c1248/media/HI%20FIVE%20READY.png',
         'https://raw.githubusercontent.com/profdrjamesjessen-cyber/PI220/adc338df5cdb9b709cc4070d1dd856155a8bcade/media/YEAH.png',
         'https://raw.githubusercontent.com/profdrjamesjessen-cyber/PI220/c3c65820931e7cb3dd7401612063903b582eac75/PI220%20NOVA%20C.png',
