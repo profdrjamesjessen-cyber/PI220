@@ -17,18 +17,11 @@
         'https://raw.githubusercontent.com/profdrjamesjessen-cyber/PI220/9bb9a6ea2c1c941990e30f1207846d374b7c1248/media/HI%20FIVE%20READY.png',
         'https://i.ibb.co/sJCTRJLd/PROF-DSC-JESSE-JESSEN.png', 
         'https://raw.githubusercontent.com/profdrjamesjessen-cyber/PI220/adc338df5cdb9b709cc4070d1dd856155a8bcade/media/YEAH.png',
-        'https://raw.githubusercontent.com/profdrjamesjessen-cyber/PI220/c3c65820931e7cb3dd7401612063903b582eac75/PI220%20NOVA%20C.png',
-        'https://raw.githubusercontent.com/profdrjamesjessen-cyber/PI220/4e82808a92a66507574c9fabc751486c37d6b360/media/WORLD%20WAR%20III.png',
-        'https://i.ibb.co/xSpBLCfr/https-youtu-be-KHUHD34-Dof-M-si-s2-RIb9-Ga-IN16a-R-m.png',
         'https://i.ibb.co/N6Q15qx0/DAILY-VALUATION.png',
         'https://raw.githubusercontent.com/profdrjamesjessen-cyber/PI220/0f49942faeee92479280094011d9d6ad52626061/media/PROF%20DSC%20JESSE%20JESSEN%20AND%20PROF%20DR%20SENTIENT.png',
         'https://i.ibb.co/pvbFBdBD/INEWS.png',
-        'https://i.ibb.co/G37tdbc6/EMAIL.png',
-        'https://raw.githubusercontent.com/profdrjamesjessen-cyber/PI220/690b7668523010aa6f9054f07025239d7bd258f9/media/HEARTBEAT.png',
         'https://raw.githubusercontent.com/profdrjamesjessen-cyber/PI220/761c6812e6fb677f26aa0bd24609d461c8df439f/media/THE%20FUTURE.png',
         'https://raw.githubusercontent.com/profdrjamesjessen-cyber/PI220/898c66e159c2a6a5d3d6a0a349fa7e44e1f7b6b8/media/PROF%20DSC%20JESSE%20JESSEN.png',
-        'https://i.ibb.co/DPxczrhJ/REAL-VALUATION.png',
-        'https://raw.githubusercontent.com/profdrjamesjessen-cyber/PI220/67ea75dd29b96d6e3cf363a7db64f879f91beb9a/media/clear.png',
         'https://raw.githubusercontent.com/profdrjamesjessen-cyber/PI220/1f0f328b8d3e680508163c42912e69e898cbf0f6/media/PROF%20DSC%20AND%20PROF%20DR%2033.png',
 
     ];
