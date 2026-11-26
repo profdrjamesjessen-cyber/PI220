@@ -11,8 +11,7 @@
 
 
       
-        'https://i.ibb.co/W40gVBjh/WORLD-WAR-III-DESTROY-AND-ANNIHILATE-SPAIN.png
-        'https://i.ibb.co/pvf7zjgd/LEGAL-EXECUTIONS.png',
+        'https://i.ibb.co/W40gVBjh/WORLD-WAR-III-DESTROY-AND-ANNIHILATE-SPAIN.png',
         'https://raw.githubusercontent.com/profdrjamesjessen-cyber/PI220/9bb9a6ea2c1c941990e30f1207846d374b7c1248/media/HI%20FIVE%20READY.png',
         'https://i.ibb.co/vpS3Jk4/STARFORCE.png',
         'https://i.ibb.co/sJCTRJLd/PROF-DSC-JESSE-JESSEN.png', 
