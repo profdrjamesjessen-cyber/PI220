@@ -12,6 +12,7 @@
 
       
         'https://i.ibb.co/W40gVBjh/WORLD-WAR-III-DESTROY-AND-ANNIHILATE-SPAIN.png',
+        'https://i.ibb.co/whKRddpG/LEGAL-EXECUTIONS.png',
         'https://i.ibb.co/bjS1Vvck/LIVE-FREE-OR-DIE-HARD-22.png',
         'https://raw.githubusercontent.com/profdrjamesjessen-cyber/PI220/93d4c8526fed5e6b3eac1bff9bdd922fcb9d1712/media/SCREENSAVER.png',
         'https://i.ibb.co/0jFX4FH6/ONGOING.png',
