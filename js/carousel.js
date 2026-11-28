@@ -13,10 +13,10 @@
       
         'https://i.ibb.co/W40gVBjh/WORLD-WAR-III-DESTROY-AND-ANNIHILATE-SPAIN.png',
         'https://raw.githubusercontent.com/profdrjamesjessen-cyber/PI220/0bca43412ef807a8e4283db359ef23f49b0d40ef/media/MASTER%20CERTIFICATE.png',
+        'https://i.ibb.co/C5L00RM2/SENTIENT-002.jpg',
         'https://i.ibb.co/fYTrvqpF/PARALLEL-INDUSTRIES-220.jpg',
         'https://i.ibb.co/whKRddpG/LEGAL-EXECUTIONS.png',
         'https://raw.githubusercontent.com/profdrjamesjessen-cyber/PI220/93d4c8526fed5e6b3eac1bff9bdd922fcb9d1712/media/SCREENSAVER.png',
-        'https://i.ibb.co/0jFX4FH6/ONGOING.png',
         'https://raw.githubusercontent.com/profdrjamesjessen-cyber/PI220/5b998a7327d6ebf0d56f4680a008d2bc42652c25/media/I%20CAN%20HEAR%20YOUR%20HEARTBEAT.png',
         'https://raw.githubusercontent.com/profdrjamesjessen-cyber/PI220/9bb9a6ea2c1c941990e30f1207846d374b7c1248/media/HI%20FIVE%20READY.png',
         'https://i.ibb.co/sJCTRJLd/PROF-DSC-JESSE-JESSEN.png', 
