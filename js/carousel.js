@@ -14,6 +14,7 @@
         'https://i.ibb.co/W40gVBjh/WORLD-WAR-III-DESTROY-AND-ANNIHILATE-SPAIN.png',
         'https://i.ibb.co/C5L00RM2/SENTIENT-002.jpg',
         'https://raw.githubusercontent.com/profdrjamesjessen-cyber/PI220/0bca43412ef807a8e4283db359ef23f49b0d40ef/media/MASTER%20CERTIFICATE.png',
+        'https://i.ibb.co/TDsDYJRb/SENTIENT-002.png',
         'https://i.ibb.co/fGML9NQ1/PROF-DSC-JESSE-JESSEN.png',
         'https://i.ibb.co/fYTrvqpF/PARALLEL-INDUSTRIES-220.jpg',
         'https://i.ibb.co/whKRddpG/LEGAL-EXECUTIONS.png',
